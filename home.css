@@ -1,0 +1,142 @@
+/* Estilos somente da Home. As telas de login e cadastro usam style.css. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #F5EDDE; color: #201C12; font-family: 'Roboto Condensed', Arial, sans-serif; }
+button, input { font: inherit; }
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #AC421D; outline-offset: 4px; }
+button:hover, .icone:hover { filter: brightness(1.08); }
+[hidden] { display: none !important; }
+.pagina { max-width: 1728px; margin: auto; font-size: clamp(10px, .926vw, 16px); }
+.cabecalho { height: 5.94em; display: flex; align-items: center; gap: 3em; padding: 0 2em; background: #201C12; color: #F5EDDE; border-radius: 0 0 1.25em 1.25em; }
+.logo { flex-shrink: 0; }
+.logo img { display: block; width: 9.25em; height: auto; }
+nav { display: flex; align-items: center; gap: 2em; height: 100%; }
+nav a, nav button { font-size: 1.25em; font-weight: 700; white-space: nowrap; }
+nav button { border: 0; padding: 0; color: inherit; background: none; }
+nav .ativo { color: #AC421D; border-bottom: .2em solid #AC421D; padding: .6em 0; }
+.busca { display: flex; margin-left: auto; width: 20em; height: 3em; border-radius: 3em; background: #4D4E30; }
+.busca button { border: 0; background: none; color: #D9D0B5; width: 3em; padding: .7em; }
+.busca svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; }
+.busca input { width: 100%; min-width: 0; border: 0; outline: none; background: transparent; color: #F5EDDE; padding-right: 1em; }
+.atalhos { display: flex; gap: 1em; }
+.icone { width: 3.8em; height: 3.4em; padding: .7em; display: flex; align-items: center; justify-content: center; background: #F8EFDC; border: 0; border-radius: 2em; color: #201C12; }
+.icone svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+.carrinho { position: relative; }
+#quantidade { position: absolute; right: -.2em; top: -.35em; background: #AC421D; color: #F8EFDC; font-size: .8em; padding: .3em .5em; border-radius: 50%; }
+.banner { margin: 2.65em 2.65em 2.1em; position: relative; }
+.banner > img { width: 100%; height: auto; display: block; border-radius: 3em; }
+.explorar { position: absolute; left: 9.4%; top: 77.7%; width: 15%; height: 10%; border-radius: 3em; }
+.explorar:hover { background: rgba(255,255,255,.12); }
+.leitor { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.categorias { position: relative; margin: 0 2em; border: 1px solid rgba(32,28,18,.67); border-radius: .8em; padding: 1.4em 3.8em; }
+.categorias h2, .ver-categorias { position: absolute; top: -.8em; margin: 0; background: #F5EDDE; padding: 0 .5em; font: 700 1em 'Inter', Arial, sans-serif; letter-spacing: .06em; }
+.ver-categorias { right: 3.8em; border: 0; }
+.lista-categorias { display: flex; justify-content: space-between; gap: 2em; }
+.categoria { width: 12.6em; height: 14.2em; border: 1px solid #AFA994; border-radius: .8em; background: #F8EFDC; display: flex; align-items: center; flex-direction: column; padding: 1em .5em; color: #201C12; }
+.categoria img { width: 9.5em; height: 8.4em; object-fit: contain;  }
+.categoria strong { font: 700 1.23em 'Inter', Arial, sans-serif; margin-top: .4em; }
+.categoria small { margin-top: .7em; font-size: .75em; color: rgba(32,28,18,.67); }
+.beneficios { display: flex; background: #4D4E30; color: #E5DFC8; margin: 2.2em 1.9em 2.7em; min-height: 8.8em; padding: .9em 1.2em; border-radius: 3.3em; box-shadow: 0 .25em .25em #201C1233; }
+.beneficios > div { width: 25%; display: flex; align-items: center; justify-content: center; gap: 1.6em; padding: 0 1em; border-right: 1px solid #8B8B70; }
+.beneficios > div:last-child { border: 0; }
+.beneficios img { width: 6.9em; height: 6.9em; mix-blend-mode: lighten; }
+.beneficios p { margin: 0; font-family: 'Inter', Arial, sans-serif; }
+.beneficios strong { display: block; font-size: 1.2em; line-height: 1.2; }
+.beneficios span { display: block; font-size: 1em; margin-top: .4em; color: #C3C0A8; }
+.titulo-secao { display: flex; gap: .8em; align-items: center; margin: 0 2em 1.3em; }
+.titulo-secao h2 { margin: 0; font-size: 1.5em; }
+.titulo-secao span { height: 1px; flex: 1; background: #66624E; }
+.titulo-secao a { font-size: .9em; padding-right: 3em; }
+.vitrine { margin: 0 1.3em 1em; padding: 1.1em 1.4em 1.35em; border: 1px solid #ABA58F; border-radius: .8em; }
+.vitrine h2 { margin: 0 0 .6em; font-size: 2.25em; color: #41412D; }
+#contador { margin-left: .55em; font-size: .65em; color: #77735E; }
+.produtos { display: flex; justify-content: space-between; gap: 2.8em; }
+.produto { width: 18.2%; min-width: 0; padding: .55em; border: 1px solid #DCD4B9; border-radius: .8em; }
+.ofertas .produto { border-color: #8F8A75; }
+.foto-produto { position: relative; }
+.foto-produto img { width: 100%; display: block; aspect-ratio: 271 / 206; object-fit: cover; border-radius: .65em; }
+.selo-produto { position: absolute; left: .7em; top: .6em; background: #AC421D; color: #F8EFDC; padding: .3em .6em; border-radius: .25em; font-size: .8em; }
+.produto h3 { font-size: .88em; margin: .75em 0 .4em; min-height: 1.15em; line-height: 1.15; }
+.tipo { font-size: .75em; margin: 0 0 .55em; color: rgba(32,28,18,.67); }
+.avaliacao { color: #AC421D; font: 1.2em Arial, sans-serif; margin: 0 0 .6em; letter-spacing: -.08em; }
+.avaliacao small { color: rgba(32,28,18,.67); font-size: .5em; letter-spacing: 0; margin-left: .7em; }
+.preco { display: flex; align-items: baseline; gap: 1em; margin: 0 0 .6em; font-size: 1.38em; color: #41412D; }
+.preco del { font-size: .65em; white-space: nowrap; }
+.adicionar { width: 100%; min-height: 2.85em; border: 0; border-radius: 1.3em; background: #AC421D; color: #F8EFDC; font-size: .75em; position: relative; }
+.adicionar span { position: absolute; left: 1em; filter: grayscale(1) brightness(0) invert(1); }
+.newsletter { margin: 2em 2.4em; padding: 1em 1.8em; min-height: 5.9em; background: #201C12; color: #F8EFDC; border-radius: 1.8em; display: flex; align-items: center; gap: 1.1em; }
+.estrela { color: #D79D55; font-size: 3.6em; }
+.newsletter h2 { margin: 0 0 .2em; font-size: 1.25em; }
+.newsletter p { font: .8em 'Inter', Arial, sans-serif; margin: 0; color: #D1C9B2; }
+.newsletter form { margin-left: auto; display: flex; border: 1px solid #9F7B42; border-radius: 3em; width: 18.3em; height: 2.6em; }
+.newsletter input { width: 100%; min-width: 0; background: none; border: 0; color: #F8EFDC; font-size: .8em; padding-left: 1.7em; }
+.newsletter input::placeholder { color: #D1C9B2; }
+.newsletter button { background: #AC421D; color: #F8EFDC; width: 2.5em; flex-shrink: 0; border-radius: 50%; border: .2em solid #201C12; }
+.anuncios { display: flex; gap: 1.5em; margin: 0 2.4em 3.3em; height: 24em; }
+.anuncio { background: #E7DFC5; border-radius: 4em; display: flex; align-items: center; justify-content: space-between; padding: 2em 4em; }
+.anuncio h2 { font-size: 4.5em; margin: 0; font-weight: 900; }
+.anuncio span { font-size: 4em; }
+.grande { width: 53%; }
+.anuncios-menores { flex: 1; display: flex; flex-direction: column; gap: .7em; }
+.anuncios-menores .anuncio { height: 50%; padding: 1em 3em; }
+.laranja { background: #AC421D; }
+.mais-produtos { margin: 0 2.6em 3.8em; }
+footer { background: #201C12; height: 11.4em; }
+.resultado { margin: 1em 2em; font-family: 'Inter', Arial, sans-serif; }
+.mensagem { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); max-width: 90%; padding: 16px 24px; background: #201C12; color: #F8EFDC; border: 1px solid #AC421D; border-radius: 12px; box-shadow: 0 4px 20px #0003; z-index: 10; font: 16px 'Inter', Arial, sans-serif; }
+/* Em telas pequenas, os elementos se reorganizam em poucas colunas. */
+@media (max-width: 850px) {
+  .pagina { font-size: 12px; }
+  .cabecalho { height: auto; flex-wrap: wrap; padding: 14px; gap: 16px; }
+  .logo img { width: 110px; }
+  nav { order: 3; justify-content: space-between; width: 100%; gap: 12px; overflow-x: auto; }
+  nav a, nav button { font-size: 13px; }
+  .busca { flex: 1; min-width: 100px; }
+  .atalhos { gap: 6px; }
+  .icone { width: 32px; height: 32px; padding: 7px; }
+  .banner { margin: 20px 12px; }
+  .banner > img { border-radius: 20px; }
+  .categorias { margin: 24px 12px; padding: 20px 12px 12px; }
+  .categorias h2, .ver-categorias { font-size: 9px; }
+  .ver-categorias { right: 12px; }
+  .lista-categorias { flex-wrap: wrap; gap: 10px; }
+  .categoria { width: calc(33.33% - 7px); height: 135px; }
+  .categoria img { width: 85px; height: 75px; }
+  .categoria strong { font-size: 11px; }
+  .beneficios { flex-wrap: wrap; margin: 20px 12px; padding: 12px; border-radius: 25px; gap: 14px 0; }
+  .beneficios > div { width: 50%; justify-content: flex-start; gap: 10px; padding: 0 8px; }
+  .beneficios > div:nth-child(2) { border: 0; }
+  .beneficios img { width: 48px; height: 48px; }
+  .beneficios strong { font-size: 10px; }
+  .beneficios span { font-size: 9px; }
+  .titulo-secao { margin: 24px 12px 12px; }
+  .titulo-secao h2 { font-size: 15px; }
+  .titulo-secao a { padding: 0; font-size: 9px; }
+  .vitrine { padding: 12px; margin: 12px; }
+  .vitrine h2 { font-size: 22px; }
+  .produtos { flex-wrap: wrap; gap: 14px; justify-content: flex-start; }
+  .produto { width: calc(50% - 7px); }
+  .produto h3 { min-height: 26px; font-size: 12px; }
+  .tipo { font-size: 10px; }
+  .adicionar { font-size: 9px; min-height: 34px; }
+  .adicionar span { display: none; }
+  .preco { font-size: 16px; gap: 8px; flex-wrap: wrap; }
+  .newsletter { margin: 20px 12px; padding: 16px; flex-wrap: wrap; }
+  .newsletter form { width: 100%; height: 36px; }
+  .newsletter h2 { font-size: 14px; }
+  .newsletter p { font-size: 10px; }
+  .anuncios { margin: 20px 12px; gap: 10px; height: 180px; }
+  .anuncio, .anuncios-menores .anuncio { padding: 15px; border-radius: 24px; }
+  .anuncio h2 { font-size: 26px; }
+  .anuncio span { font-size: 24px; }
+  .anuncios-menores { gap: 10px; }
+  .mais-produtos { margin: 25px 12px; }
+  footer { height: 90px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.icone-anuncio { width: 4em; height: 4em; }
+@media (max-width: 850px) { .icone-anuncio { width: 24px; height: 24px; } }

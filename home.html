@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaTech — Tecnologia vintage</title>
+  <link rel="stylesheet" href="assets/fontes.css">
+  <link rel="stylesheet" href="home.css">
+  <script src="home.js" defer></script>
+</head>
+<body>
+<div class="pagina">
+  <header class="cabecalho" id="inicio">
+    <a href="home.html" class="logo"><img src="assets/home/logo-novatech.png" alt="NovaTech"></a>
+    <nav aria-label="Menu principal">
+      <a class="ativo" href="#inicio">LOJA</a>
+      <a href="#categorias">CATEGORIAS</a>
+      <a href="#ofertas">OFERTAS</a>
+      <a href="#novidades">NOVIDADES</a>
+      <button id="sobre" type="button">SOBRE</button>
+    </nav>
+    <form class="busca" id="form-busca" role="search">
+      <button type="submit" aria-label="Buscar produtos"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"></circle><path d="m15 15 6 6"></path></svg></button>
+      <input type="search" id="buscar" aria-label="Buscar produtos">
+    </form>
+    <div class="atalhos">
+      <button class="icone" id="favoritos" aria-label="Favoritos" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 3 12C-3 5 6-2 12 5c6-7 15 0 9 7Z"></path></svg></button>
+      <button class="icone carrinho" id="carrinho" aria-label="Carrinho, 3 produtos" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 2h4l3 13h12l3-9H6"></path><circle cx="9" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle></svg><span id="quantidade">3</span></button>
+      <a class="icone" href="index.html" aria-label="Entrar na minha conta"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4"></circle><path d="M4 22v-4c0-6 16-6 16 0v4"></path></svg></a>
+    </div>
+  </header>
+  <main>
+    <!-- A arte do banner foi extraída da exportação do Figma. -->
+    <section class="banner" aria-label="Tecnologia vintage: história em cada detalhe">
+      <h1 class="leitor">O passado ainda tem muito a oferecer.</h1>
+      <img src="assets/home/banner-home.png" alt="Televisões de tubo, videogames clássicos, rádios, filmadoras e muito mais. Equipamentos originais, revisados e prontos para levar nostalgia para a sua casa.">
+      <a class="explorar" href="#ofertas" aria-label="Explorar loja"></a>
+    </section>
+    <section class="categorias" id="categorias" aria-labelledby="titulo-categorias">
+      <h2 id="titulo-categorias">CATEGORIAS EM DESTAQUE</h2>
+      <button class="ver-categorias" id="todas-categorias" type="button">VER MAIS &gt;</button>
+      <div class="lista-categorias">
+        <button class="categoria" type="button" data-filtro="Televisores"><img src="assets/home/categoria-tv.png" alt=""><strong>TELEVISORES</strong><small>Ver produtos →</small></button>
+        <button class="categoria" type="button" data-filtro="Video Games"><img src="assets/home/categoria-games.png" alt=""><strong>VIDEOGAMES</strong><small>Ver produtos →</small></button>
+        <button class="categoria" type="button" data-filtro="Rádio"><img src="assets/home/categoria-radio.png" alt=""><strong>RÁDIOS</strong><small>Ver produtos →</small></button>
+        <button class="categoria" type="button" data-filtro="Filmadora"><img src="assets/home/categoria-filmadora.png" alt=""><strong>FILMADORAS</strong><small>Ver produtos →</small></button>
+        <button class="categoria" type="button" data-filtro="Câmera"><img src="assets/home/categoria-camera.png" alt=""><strong>CÂMERAS</strong><small>Ver produtos →</small></button>
+        <button class="categoria" type="button" data-filtro="Áudio"><img src="assets/home/categoria-audio.png" alt=""><strong>ÁUDIOS</strong><small>Ver produtos →</small></button>
+      </div>
+    </section>
+    <section class="beneficios" aria-label="Vantagens da NovaTech">
+      <div><img src="assets/home/beneficio-envio.png" alt=""><p><strong>ENVIO SEGURO</strong><span>para todo o Brasil</span></p></div>
+      <div><img src="assets/home/beneficio-teste.png" alt=""><p><strong>PRODUTOS TESTADOS</strong><span>e revisados</span></p></div>
+      <div><img src="assets/home/beneficio-garantia.png" alt=""><p><strong>GARANTIA DE<br>AUTENTICIDADE</strong><span>em todos os itens</span></p></div>
+      <div><img src="assets/home/beneficio-suporte.png" alt=""><p><strong>SUPORTE<br>ESPECIALIZADO</strong><span>Tire suas dúvidas</span></p></div>
+    </section>
+    <div class="titulo-secao"><h2>PRODUTOS EM DESTAQUE</h2><span></span><a href="#mais-produtos">VER MAIS &gt;</a></div>
+    <p id="resultado-busca" class="resultado" role="status" hidden></p>
+    <section class="vitrine ofertas" id="ofertas" aria-labelledby="titulo-ofertas">
+      <h2 id="titulo-ofertas">PROMOÇÕES RELÂMPAGO <span id="contador">04:06:31</span></h2>
+      <div class="produtos">
+      <article class="produto" data-categoria="Video Games">
+        <div class="foto-produto"><img src="assets/home/gameboy.png" alt="Nintendo Game Boy Classic" loading="lazy"></div>
+        <h3>Nintendo Game Boy Classic</h3>
+        <p class="tipo">Video Games</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 499,00 <del>R$ 599,00</del></p>
+        <button class="adicionar" type="button" data-produto="Nintendo Game Boy Classic"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Televisores">
+        <div class="foto-produto"><img src="assets/home/tv-trinitron.png" alt="TV SONY TRINITRON KV-1310" loading="lazy"></div>
+        <h3>TV SONY TRINITRON KV-1310</h3>
+        <p class="tipo">Televisores</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 1.299,00 <del>R$ 1.299,00</del></p>
+        <button class="adicionar" type="button" data-produto="TV SONY TRINITRON KV-1310"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Áudio">
+        <div class="foto-produto"><img src="assets/home/discman.png" alt="Sony Discman" loading="lazy"></div>
+        <h3>Sony Discman</h3>
+        <p class="tipo">Áudio</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 399,00 <del>R$ 459,00</del></p>
+        <button class="adicionar" type="button" data-produto="Sony Discman"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Câmera">
+        <div class="foto-produto"><img src="assets/home/polaroid.png" alt="Polaroid OneStep SX-70" loading="lazy"></div>
+        <h3>Polaroid OneStep SX-70</h3>
+        <p class="tipo">Câmera</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 549,00 <del>R$ 629,00</del></p>
+        <button class="adicionar" type="button" data-produto="Polaroid OneStep SX-70"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Câmera">
+        <div class="foto-produto"><img src="assets/home/filmadora.png" alt="Filmadora Analógica Vintage" loading="lazy"></div>
+        <h3>Filmadora Analógica Vintage</h3>
+        <p class="tipo">Câmera</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 699,00 <del>R$ 729,00</del></p>
+        <button class="adicionar" type="button" data-produto="Filmadora Analógica Vintage"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      </div>
+    </section>
+    <section class="vitrine mais-vendidos" aria-labelledby="titulo-vendidos">
+      <h2 id="titulo-vendidos">MAIS VENDIDOS</h2>
+      <div class="produtos">
+      <article class="produto" data-categoria="Televisores">
+        <div class="foto-produto"><img src="assets/home/tv-trinitron.png" alt="TV SONY TRINITRON KV-1310" loading="lazy"><span class="selo-produto">MAIS VENDIDO</span></div>
+        <h3>TV SONY TRINITRON KV-1310</h3>
+        <p class="tipo">Televisores</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 999,99 <del>R$ 1.299,00</del></p>
+        <button class="adicionar" type="button" data-produto="TV SONY TRINITRON KV-1310"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Video Games">
+        <div class="foto-produto"><img src="assets/home/playstation.png" alt="SONY PLAYSTATION 1 (PS1)" loading="lazy"></div>
+        <h3>SONY PLAYSTATION 1 (PS1)</h3>
+        <p class="tipo">Video Games</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 649,99 </p>
+        <button class="adicionar" type="button" data-produto="SONY PLAYSTATION 1 (PS1)"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Video Games">
+        <div class="foto-produto"><img src="assets/home/nintendo64.png" alt="NINTENDO 64 (N64)" loading="lazy"></div>
+        <h3>NINTENDO 64 (N64)</h3>
+        <p class="tipo">Video Games</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 899,99 </p>
+        <button class="adicionar" type="button" data-produto="NINTENDO 64 (N64)"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Video Games">
+        <div class="foto-produto"><img src="assets/home/super-nintendo.png" alt="SUPER NINTENDO" loading="lazy"></div>
+        <h3>SUPER NINTENDO</h3>
+        <p class="tipo">Video Games</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 749,99 </p>
+        <button class="adicionar" type="button" data-produto="SUPER NINTENDO"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Áudio">
+        <div class="foto-produto"><img src="assets/home/walkman.png" alt="Sony Walkman" loading="lazy"></div>
+        <h3>Sony Walkman</h3>
+        <p class="tipo">Áudio</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 1.299,00 </p>
+        <button class="adicionar" type="button" data-produto="Sony Walkman"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      </div>
+    </section>
+    <section class="newsletter" id="novidades" aria-label="Receba novidades e promoções">
+      <span class="estrela" aria-hidden="true">✦</span>
+      <div><h2>RECEBA NOVIDADES E PROMOÇÕES</h2><p>Seja o primeiro a saber sobre novos itens, ofertas e lançamentos.</p></div>
+      <form id="form-novidades"><input type="email" aria-label="Seu e-mail" placeholder="Seu e-mail" required><button type="submit" aria-label="Cadastrar e-mail">→</button></form>
+    </section>
+    <section class="anuncios" aria-label="Espaços para anúncios">
+      <div class="anuncio grande"><h2>ANUNCIO</h2><svg class="icone-anuncio" viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="10" width="28" height="24" rx="3" transform="rotate(12 19 22)" fill="currentColor"/><rect x="9" y="4" width="28" height="24" rx="3" fill="currentColor" stroke="#E7DFC5" stroke-width="2"/><circle cx="17" cy="11" r="3" fill="#E7DFC5"/><path d="m11 24 8-9 5 5 5-8 6 12Z" fill="#E7DFC5"/></svg></div>
+      <div class="anuncios-menores"><div class="anuncio laranja"><h2>ANUNCIO</h2><svg class="icone-anuncio" viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="10" width="28" height="24" rx="3" transform="rotate(12 19 22)" fill="currentColor"/><rect x="9" y="4" width="28" height="24" rx="3" fill="currentColor" stroke="#E7DFC5" stroke-width="2"/><circle cx="17" cy="11" r="3" fill="#E7DFC5"/><path d="m11 24 8-9 5 5 5-8 6 12Z" fill="#E7DFC5"/></svg></div><div class="anuncio"><h2>ANUNCIO</h2><svg class="icone-anuncio" viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="10" width="28" height="24" rx="3" transform="rotate(12 19 22)" fill="currentColor"/><rect x="9" y="4" width="28" height="24" rx="3" fill="currentColor" stroke="#E7DFC5" stroke-width="2"/><circle cx="17" cy="11" r="3" fill="#E7DFC5"/><path d="m11 24 8-9 5 5 5-8 6 12Z" fill="#E7DFC5"/></svg></div></div>
+    </section>
+    <section class="mais-produtos" id="mais-produtos" aria-label="Mais produtos">
+      <div class="produtos">
+      <article class="produto" data-categoria="Video Games">
+        <div class="foto-produto"><img src="assets/home/playstation.png" alt="SONY PLAYSTATION 1 (PS1)" loading="lazy"></div>
+        <h3>SONY PLAYSTATION 1 (PS1)</h3>
+        <p class="tipo">Video Games</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 649,99 </p>
+        <button class="adicionar" type="button" data-produto="SONY PLAYSTATION 1 (PS1)"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Video Games">
+        <div class="foto-produto"><img src="assets/home/nintendo64.png" alt="NINTENDO 64 (N64)" loading="lazy"></div>
+        <h3>NINTENDO 64 (N64)</h3>
+        <p class="tipo">Video Games</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 899,99 </p>
+        <button class="adicionar" type="button" data-produto="NINTENDO 64 (N64)"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Video Games">
+        <div class="foto-produto"><img src="assets/home/super-nintendo.png" alt="SUPER NINTENDO" loading="lazy"></div>
+        <h3>SUPER NINTENDO</h3>
+        <p class="tipo">Video Games</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 749,99 </p>
+        <button class="adicionar" type="button" data-produto="SUPER NINTENDO"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Áudio">
+        <div class="foto-produto"><img src="assets/home/walkman.png" alt="Sony Walkman" loading="lazy"></div>
+        <h3>Sony Walkman</h3>
+        <p class="tipo">Áudio</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 1.299,00 </p>
+        <button class="adicionar" type="button" data-produto="Sony Walkman"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      <article class="produto" data-categoria="Áudio">
+        <div class="foto-produto"><img src="assets/home/discman.png" alt="Sony Discman" loading="lazy"></div>
+        <h3>Sony Discman</h3>
+        <p class="tipo">Áudio</p>
+        <p class="avaliacao" aria-label="5 de 5 estrelas, 12 avaliações">★★★★★ <small>(12)</small></p>
+        <p class="preco">R$ 399,00 <del>R$ 459,00</del></p>
+        <button class="adicionar" type="button" data-produto="Sony Discman"><span aria-hidden="true">🛒</span> ADICIONAR AO CARRINHO</button>
+      </article>
+      </div>
+    </section>
+  </main>
+  <footer aria-label="Rodapé da NovaTech"></footer>
+</div>
+<div id="mensagem-home" class="mensagem" role="status" hidden></div>
+</body>
+</html>
