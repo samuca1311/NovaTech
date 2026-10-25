@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar conta | NovaTech</title>
+  <link rel="stylesheet" href="assets/fontes.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="painel cadastro">
+    <section class="conteudo" aria-labelledby="titulo">
+      <div class="marca"><span>IRANI</span><hr></div>
+      <h1 id="titulo">Crie sua conta</h1>
+      <p class="descricao">É fácil e rápido</p>
+      <form id="form-cadastro">
+        <div class="linha-nomes">
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" placeholder="Carlos" autocomplete="given-name" required>
+          </div>
+          <div class="campo">
+            <label for="sobrenome">Sobrenome</label>
+            <input id="sobrenome" name="sobrenome" type="text" placeholder="Autopecas" autocomplete="family-name" required>
+          </div>
+        </div>
+        <div class="campo campo-email">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="precisodenota@gmail.com" autocomplete="email" required>
+        </div>
+        <div class="campo campo-senha">
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password" placeholder="●●●●●●" autocomplete="new-password" required>
+        </div>
+        <button class="botao principal" type="submit">Criar</button>
+        <a class="botao secundario" href="index.html">Entrar <img src="assets/seta.png" alt="" width="24" height="24"></a>
+      </form>
+      <hr class="divisor">
+      <div class="acessos" aria-label="Outras formas de Criar conta">
+        <button class="social" type="button" data-provedor="Google" aria-label="Criar conta com Google"><img src="assets/google.png" alt="" width="38" height="38"></button>
+        <button class="social" type="button" data-provedor="Apple" aria-label="Criar conta com Apple"><img class="apple" src="assets/apple.png" alt="" width="39" height="39"></button>
+        <button class="social" type="button" data-provedor="telefone" aria-label="Criar conta com telefone"><img src="assets/telefone.png" alt="" width="44" height="44"></button>
+      </div>
+      <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+    </section>
+    <div class="arte arte-cadastro">
+      <img src="assets/cadastro-retro.png" alt="Ilustração retrô de um pôr do sol sobre um lago, com montanhas e faixas alaranjadas.">
+    </div>
+  </main>
+</body>
+</html>

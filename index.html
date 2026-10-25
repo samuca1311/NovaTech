@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar | NovaTech</title>
+  <link rel="stylesheet" href="assets/fontes.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="painel login">
+    <div class="arte arte-login">
+      <img src="assets/login-retro.png" alt="Televisor e videogame antigos em um ambiente retrô com tons de laranja.">
+    </div>
+    <section class="conteudo" aria-labelledby="titulo">
+      <!-- IRANI foi mantido como aparece no protótipo. -->
+      <div class="marca"><span>IRANI</span><hr></div>
+      <h1 id="titulo">Entrar na sua conta</h1>
+      <p class="descricao">Acesse para comprar, acompanhar seus pedidos e reviver grandes clássicos da tecnologia</p>
+      <form id="form-login">
+        <div class="campo campo-email">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="precisodenota@gmail.com" autocomplete="email" required>
+        </div>
+        <div class="campo campo-senha">
+          <label for="senha">Senha</label>
+          <div class="caixa-senha">
+            <input id="senha" name="senha" type="password" placeholder="●●●●●●" autocomplete="current-password" required>
+            <button id="mostrar-senha" class="mostrar-senha" type="button" aria-label="Mostrar senha" aria-pressed="false"><img src="assets/olho.png" alt="" width="24" height="24"></button>
+          </div>
+        </div>
+        <div class="recuperar"><button id="esqueci-senha" type="button">Esqueci minha senha</button></div>
+        <button class="botao principal" type="submit">Entrar</button>
+        <a class="botao secundario" href="criar-conta.html">Criar conta <img src="assets/seta.png" alt="" width="24" height="24"></a>
+      </form>
+      <hr class="divisor">
+      <div class="acessos" aria-label="Outras formas de Entrar">
+        <button class="social" type="button" data-provedor="Google" aria-label="Entrar com Google"><img src="assets/google.png" alt="" width="38" height="38"></button>
+        <button class="social" type="button" data-provedor="Apple" aria-label="Entrar com Apple"><img class="apple" src="assets/apple.png" alt="" width="39" height="39"></button>
+        <button class="social" type="button" data-provedor="telefone" aria-label="Entrar com telefone"><img src="assets/telefone.png" alt="" width="44" height="44"></button>
+      </div>
+      <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+</body>
+</html>

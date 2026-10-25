@@ -1,0 +1,387 @@
+/* CSS simples, sem frameworks. Medidas do protótipo: 1728 x 1117. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 73px 0 52px;
+  background: #f5edde;
+  color: #201c12;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+button, input {
+  font: inherit;
+}
+
+.painel {
+  display: flex;
+  width: 90%;
+  max-width: 1555px;
+  min-height: 992px;
+  margin: 0 auto;
+  border-radius: 73px;
+  background: #f8efdc;
+  box-shadow: 0 12px 35px 12px rgba(89, 69, 47, 0.2);
+}
+
+/* Recortes das artes, iguais aos do Figma. */
+.arte {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.arte-login {
+  width: 47.8457%;
+  height: 950px;
+  margin: 21px 0 21px 3.0225%;
+  border-radius: 64px;
+}
+
+.arte-login img {
+  position: absolute;
+  width: 218.9%;
+  height: 112.95%;
+  left: -8.7%;
+  top: -6.04%;
+}
+
+.conteudo {
+  flex-shrink: 0;
+}
+
+.login .conteudo {
+  width: 35.2412%;
+  margin: 104px 0 35px 6.1736%;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 19px;
+  color: #ac421d;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.marca hr {
+  flex: 1;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid #ac421d;
+}
+
+.login .marca {
+  width: calc(100% + 16px);
+}
+
+h1 {
+  margin: 39px 0 15px;
+  font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 0.92;
+}
+
+.descricao {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.4;
+  color: rgba(32, 28, 18, 0.67);
+}
+
+.login .descricao {
+  width: calc(100% + 22px);
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 13px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.campo input {
+  width: 100%;
+  height: 68px;
+  padding: 0 22px;
+  border: 1px solid #ac421d;
+  border-radius: 18px;
+  background: transparent;
+  color: #ac421d;
+  font-size: 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+input::placeholder {
+  color: #ac421d;
+  opacity: 1;
+}
+
+input[type="password"]::placeholder {
+  color: rgba(172, 66, 29, 0.77);
+  font-size: 24px;
+  letter-spacing: 6px;
+}
+
+.login .campo-email {
+  margin-top: 15px;
+}
+
+.login .campo-senha {
+  margin-top: 13px;
+}
+
+.login .campo-senha label {
+  margin-bottom: 10px;
+}
+
+.caixa-senha {
+  position: relative;
+}
+
+.caixa-senha input {
+  padding-right: 60px;
+}
+
+.mostrar-senha {
+  position: absolute;
+  right: 17px;
+  top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.recuperar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 23px 0 28px;
+}
+
+.recuperar button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #ac421d;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  cursor: pointer;
+}
+
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 68px;
+  padding: 0 12px;
+  border: 1px solid #ac421d;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.principal {
+  background: #ac421d;
+  color: #f8efdc;
+}
+
+.secundario {
+  margin-top: 11px;
+  background: transparent;
+  color: #ac421d;
+}
+
+.divisor {
+  margin: 32px 0 31px;
+  border: 0;
+  border-top: 1px solid #ac421d;
+}
+
+.acessos {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 114px;
+  height: 89px;
+  padding: 0;
+  border: 1px solid #ac421d;
+  border-radius: 18px;
+  background: transparent;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.social img {
+  object-fit: cover;
+}
+
+.social .apple {
+  transform: translateY(-4px);
+}
+
+.mensagem {
+  margin: 16px 0 0;
+  color: #ac421d;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.mensagem:empty {
+  display: none;
+}
+
+button:hover, .botao:hover {
+  filter: brightness(0.94);
+}
+
+input:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 3px solid rgba(172, 66, 29, 0.45);
+  outline-offset: 4px;
+}
+
+/* Cadastro: formulário à esquerda, arte à direita. */
+.cadastro .conteudo {
+  width: 34.7267%;
+  margin: 108px 0 35px 9.3248%;
+}
+
+.cadastro h1 {
+  margin: 22px 0 13px;
+}
+
+.cadastro .descricao {
+  margin-left: 2px;
+}
+
+.linha-nomes {
+  display: flex;
+  gap: 32px;
+  margin-top: 4px;
+}
+
+.linha-nomes .campo {
+  width: calc(50% - 16px);
+}
+
+.cadastro .campo label {
+  margin-bottom: 7px;
+}
+
+.cadastro .campo input {
+  padding-left: 20px;
+}
+
+.cadastro .linha-nomes input {
+  padding-left: 17px;
+}
+
+.cadastro .campo-email {
+  margin-top: 9px;
+}
+
+.cadastro .campo-email label {
+  margin-bottom: 0;
+}
+
+.cadastro .campo-senha {
+  margin-top: 11px;
+}
+
+.cadastro .campo-senha label {
+  margin-bottom: 0;
+}
+
+.cadastro .principal {
+  margin-top: 39px;
+}
+
+.cadastro .arte {
+  width: 44.9518%;
+  height: 953px;
+  margin: 21px 0 18px 8.4244%;
+  border-radius: 62px;
+}
+
+.arte-cadastro img {
+  position: absolute;
+  width: 104.12%;
+  height: 101.76%;
+  left: -2.01%;
+  top: -0.85%;
+}
+
+/* Ajustes para computadores menores. */
+@media (max-width: 1500px) {
+  body { padding: 40px 0; }
+  .painel { min-height: 820px; border-radius: 50px; }
+  .arte-login, .cadastro .arte { height: 780px; border-radius: 42px; }
+  .login .conteudo, .cadastro .conteudo { margin-top: 70px; }
+  h1 { font-size: 34px; margin-top: 30px; }
+  .descricao, .campo label, .campo input { font-size: 16px; }
+  .campo label { line-height: 24px; margin-bottom: 8px; }
+  .campo input, .botao { height: 56px; border-radius: 14px; }
+  .botao { font-size: 18px; }
+  .mostrar-senha { top: 8px; }
+  .recuperar { margin: 20px 0 24px; }
+  .recuperar button { font-size: 14px; }
+  .acessos { gap: 20px; }
+  .social { width: 90px; height: 72px; border-radius: 14px; }
+  .divisor { margin: 25px 0; }
+  .cadastro .principal { margin-top: 30px; }
+  .linha-nomes { gap: 22px; }
+  .linha-nomes .campo { width: calc(50% - 11px); }
+}
+
+@media (max-width: 950px) {
+  .painel { width: 94%; }
+  .login .conteudo { width: 40%; margin-left: 4%; }
+  .arte-login { width: 48%; }
+  .cadastro .conteudo { width: 40%; margin-left: 5%; }
+  .cadastro .arte { width: 45%; margin-left: 5%; }
+  .acessos { gap: 12px; }
+  .social { width: 76px; }
+  .marca { font-size: 13px; }
+  .login .descricao, .login .marca { width: 100%; }
+}
+
+/* No celular, os elementos ficam um abaixo do outro. */
+@media (max-width: 700px) {
+  body { padding: 20px 0; }
+  .painel { flex-direction: column; min-height: 0; border-radius: 32px; }
+  .arte-login { width: calc(100% - 28px); height: 300px; margin: 14px; border-radius: 24px; }
+  .arte-login img { width: 218.9%; height: auto; top: -40%; }
+  .login .conteudo, .cadastro .conteudo { width: auto; margin: 30px 26px; }
+  .login .marca { width: 100%; }
+  h1 { font-size: 34px; }
+  .descricao { font-size: 16px; }
+  .social { width: 90px; height: 72px; }
+  .cadastro .arte { width: calc(100% - 28px); height: 380px; margin: 0 14px 14px; border-radius: 24px; }
+  .arte-cadastro img { height: auto; top: -15%; }
+}
