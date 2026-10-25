@@ -9,7 +9,7 @@ var botoesSociais = document.querySelectorAll(".social");
 if (formLogin) {
   formLogin.addEventListener("submit", function (evento) {
     evento.preventDefault();
-    mensagem.textContent = "Login realizado na demonstração. Bem-vindo à NovaTech!";
+    window.location.href = "home.html";
   });
 }
 
