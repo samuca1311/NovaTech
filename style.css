@@ -385,3 +385,40 @@ input:focus-visible, button:focus-visible, a:focus-visible {
   .cadastro .arte { width: calc(100% - 28px); height: 380px; margin: 0 14px 14px; border-radius: 24px; }
   .arte-cadastro img { height: auto; top: -15%; }
 }
+
+/* Computadores: altura acompanha a janela, mantendo as duas colunas. */
+@media (min-width: 1024px) {
+  body { padding: 28px 0; }
+  .painel { min-height: 0; width: 90%; align-items: stretch; border-radius: 48px; }
+  .arte-login, .cadastro .arte {
+    height: auto; min-height: 600px;
+    margin-top: 20px; margin-bottom: 20px; border-radius: 38px;
+  }
+  .login .conteudo, .cadastro .conteudo {
+    min-width: 0; margin-top: 48px; margin-bottom: 48px;
+  }
+  .login .descricao, .login .marca { width: 100%; }
+  .campo, .linha-nomes .campo { min-width: 0; }
+  .arte img { object-fit: cover; }
+}
+@media (min-width: 1024px) and (max-height: 850px) {
+  body { padding: 20px 0; }
+  .painel { max-width: 1280px; border-radius: 36px; }
+  .arte-login, .cadastro .arte { min-height: 540px; margin-top: 16px; margin-bottom: 16px; border-radius: 28px; }
+  .login .conteudo, .cadastro .conteudo { margin-top: 30px; margin-bottom: 30px; }
+  h1, .cadastro h1 { font-size: 30px; line-height: 1.1; margin: 20px 0 10px; }
+  .descricao, .campo label, .campo input { font-size: 16px; }
+  .campo label { line-height: 22px; margin-bottom: 6px; }
+  .campo input, .botao { height: 48px; border-radius: 12px; }
+  .botao { font-size: 18px; }
+  .mostrar-senha { top: 4px; }
+  .recuperar { margin: 14px 0 18px; }
+  .recuperar button { font-size: 14px; }
+  .divisor { margin: 20px 0; }
+  .acessos { gap: 16px; }
+  .social { width: 80px; height: 58px; border-radius: 12px; }
+  .social img { max-width: 32px; height: auto; }
+  .cadastro .principal { margin-top: 22px; }
+  .linha-nomes { gap: 16px; }
+  .linha-nomes .campo { width: calc(50% - 8px); }
+}
