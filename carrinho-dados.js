@@ -27,7 +27,7 @@ function atualizarContadorCarrinho() {
   var contador = document.getElementById('quantidade');
   if (contador) contador.textContent = total;
   var botao = document.getElementById('carrinho');
-  if (botao) botao.setAttribute('aria-label', 'Carrinho, ' + total + ' itens');
+  if (botao) botao.setAttribute('aria-label', 'Carrinho, ' + total + (total === 1 ? ' item' : ' itens'));
 }
 atualizarContadorCarrinho();
 window.addEventListener('pageshow', atualizarContadorCarrinho);
