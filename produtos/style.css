@@ -59,9 +59,8 @@
 .info-produto { margin-left: auto; border: 1px solid #9b927b; color: #827a63; border-radius: 50%; width: 20px; height: 20px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
 .servicos-produto details > p { margin: 0; padding: 0 16px 16px; font: 12px/1.5 'Inter', Arial, sans-serif; }
 .servicos-produto summary:focus-visible { outline: 2px solid #ac421d; outline-offset: 3px; }
-.anuncio-produto { margin: 52px 0 36px; height: auto; aspect-ratio: 1624 / 376; border-radius: 50px; background: #e7dec6; display: flex; align-items: center; justify-content: space-between; padding: 5% 8%; }
-.anuncio-produto h2 { font-size: clamp(32px, 3.5vw, 60px); margin: 0; }
-.anuncio-produto svg { width: 48px; height: 48px; fill: none; stroke: #201c12; stroke-width: 2.2; }
+.anuncio-produto { margin: 52px 0 36px; padding: 0; overflow: hidden; border-radius: 18px; }
+.anuncio-produto img { display: block; width: 100%; height: auto; }
 .relacionados-produto .titulo-secao { margin: 0 0 28px; }
 .relacionados-produto .titulo-secao a { padding-right: 0; }
 .relacionados-produto .foto-produto img { height: auto; }
