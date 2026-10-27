@@ -7,28 +7,29 @@
   <link rel="stylesheet" href="assets/fontes.css">
   <link rel="stylesheet" href="home.css?v=desktop-1">
   <link rel="stylesheet" href="carrinho.css?v=precos-1">
-  <script src="carrinho-dados.js?v=precos-1" defer></script>
-  <script src="carrinho.js?v=precos-1" defer></script>
+  <script src="carrinho-dados.js?v=produtos-1" defer></script>
+  <script src="carrinho.js?v=produtos-1" defer></script>
+  <link rel="stylesheet" href="footer.css?v=produtos-1">
 </head>
-<body>
+<body id="topo">
 <div class="pagina">
   <header class="cabecalho" id="inicio">
-    <a href="home.html?v=precos-1" class="logo"><img src="assets/home/logo-novatech.png" alt="NovaTech"></a>
+    <a href="home.html?v=produtos-1" class="logo"><img src="assets/home/logo-novatech.png" alt="NovaTech"></a>
     <nav aria-label="Menu principal">
-      <a class="link-loja" href="home.html?v=precos-1#inicio">LOJA</a>
-      <a href="home.html?v=precos-1#categorias">CATEGORIAS</a>
-      <a href="home.html?v=precos-1#ofertas">OFERTAS</a>
-      <a href="home.html?v=precos-1#novidades">NOVIDADES</a>
-      <a href="home.html?v=precos-1">SOBRE</a>
+      <a class="link-loja" href="home.html?v=produtos-1#inicio">LOJA</a>
+      <a href="home.html?v=produtos-1#categorias">CATEGORIAS</a>
+      <a href="home.html?v=produtos-1#ofertas">OFERTAS</a>
+      <a href="home.html?v=produtos-1#novidades">NOVIDADES</a>
+      <a href="home.html?v=produtos-1">SOBRE</a>
     </nav>
-    <form class="busca" action="home.html?v=precos-1" role="search">
+    <form class="busca" action="home.html?v=produtos-1" role="search">
       <button type="submit" aria-label="Buscar produtos"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"></circle><path d="m15 15 6 6"></path></svg></button>
       <input type="search" id="buscar" name="busca" aria-label="Buscar produtos">
     </form>
     <div class="atalhos">
       <button class="icone" id="favoritos" aria-label="Favoritos" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 3 12C-3 5 6-2 12 5c6-7 15 0 9 7Z"></path></svg></button>
       <button class="icone carrinho" id="carrinho" aria-label="Carrinho" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 2h4l3 13h12l3-9H6"></path><circle cx="9" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle></svg><span id="quantidade">0</span></button>
-      <a class="icone" href="index.html" aria-label="Entrar na minha conta"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4"></circle><path d="M4 22v-4c0-6 16-6 16 0v4"></path></svg></a>
+      <a class="icone" href="index.html?v=produtos-1" aria-label="Entrar na minha conta"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4"></circle><path d="M4 22v-4c0-6 16-6 16 0v4"></path></svg></a>
     </div>
   </header>
   <main class="pagina-carrinho">
@@ -37,31 +38,67 @@
       <p class="introducao">Confira os produtos adicionados e finalize sua compra</p>
       <div class="lista-itens" id="lista-itens"></div>
       <div class="carrinho-vazio" id="carrinho-vazio" hidden>
-        <h2>Seu carrinho está vazio</h2><p>Explore a loja e adicione seus produtos favoritos.</p>
+        <h2>Seu carrinho est� vazio</h2><p>Explore a loja e adicione seus produtos favoritos.</p>
       </div>
-      <a href="home.html?v=precos-1" class="continuar"><span aria-hidden="true">←</span> Continuar Comprando</a>
+      <a href="home.html?v=produtos-1" class="continuar"><span aria-hidden="true"></span> Continuar Comprando</a>
     </section>
     <aside class="resumo" aria-labelledby="titulo-resumo">
-      <div class="arte-resumo" aria-hidden="true"><div></div><span>✷</span></div>
+      <div class="arte-resumo" aria-hidden="true"><div></div><span>?</span></div>
       <div class="resumo-conteudo">
         <h2 id="titulo-resumo">Resumo do pedido</h2>
-        <p class="linha-resumo"><span id="subtotal">Subtotal (1 item)</span><span id="valor-subtotal">—</span></p>
+        <p class="linha-resumo"><span id="subtotal">Subtotal (1 item)</span><span id="valor-subtotal">-</span></p>
         <p class="linha-resumo"><span>Frete</span><span>A calcular</span></p>
         <hr>
-        <p class="linha-resumo total"><strong>Total estimado</strong><strong id="valor-total">—</strong></p>
-        <p class="nota-frete">O frete será calculado na finalização da compra.</p>
+        <p class="linha-resumo total"><strong>Total estimado</strong><strong id="valor-total">-</strong></p>
+        <p class="nota-frete">O frete ser� calculado na finaliza��o da compra.</p>
         <form class="cupom" id="form-cupom"><label class="leitor" for="cupom">Cupom de desconto</label><input id="cupom" placeholder="Cupom de desconto"><button type="submit">Aplicar</button></form>
-        <button class="finalizar" id="finalizar" type="button"><span aria-hidden="true">♧</span> Finalizar compra <span aria-hidden="true">→</span></button>
+        <button class="finalizar" id="finalizar" type="button"><span aria-hidden="true">?</span> Finalizar compra <span aria-hidden="true"></span></button>
         <div class="seguranca">
-          <p><span aria-hidden="true">♢</span><span><strong>Compra Segura</strong><small>Seus dados protegidos</small></span></p>
-          <p><span aria-hidden="true">▱</span><span><strong>Entrega para</strong><small>todo o Brasil</small></span></p>
-          <p><span aria-hidden="true">▤</span><span><strong>Diversas formas</strong><small>de pagamento</small></span></p>
+          <p><span aria-hidden="true">?</span><span><strong>Compra Segura</strong><small>Seus dados protegidos</small></span></p>
+          <p><span aria-hidden="true">?</span><span><strong>Entrega para</strong><small>todo o Brasil</small></span></p>
+          <p><span aria-hidden="true">?</span><span><strong>Diversas formas</strong><small>de pagamento</small></span></p>
         </div>
       </div>
     </aside>
     <p class="aviso-carrinho" id="aviso-carrinho" role="status" aria-live="polite"></p>
   </main>
-  <footer aria-label="Rodapé da NovaTech"></footer>
+  <footer class="rodape-site" aria-label="Rodap� da NovaTech">
+    <div class="rodape-principal">
+      <div class="rodape-marca" id="sobre-novatech">
+        <a href="home.html?v=produtos-1" aria-label="NovaTech - ir para a loja"><img src="assets/home/logo-novatech.png" alt="NovaTech" width="148" height="70" loading="lazy"></a>
+        <p>Tecnologia vintage,<br>hist�ria em cada detalhe.</p>
+        <span class="rodape-assinatura">Uma nova vida para os cl�ssicos.</span>
+      </div>
+      <section class="rodape-coluna" aria-labelledby="rodape-loja">
+        <h2 id="rodape-loja">EXPLORE A LOJA</h2>
+        <ul>
+          <li><a href="home.html?v=produtos-1">Todos os produtos</a></li>
+          <li><a href="home.html?v=produtos-1#ofertas">Ofertas</a></li>
+          <li><a href="home.html?v=produtos-1#mais-vendidos">Mais vendidos</a></li>
+          <li><a href="home.html?v=produtos-1#novidades">Novidades</a></li>
+        </ul>
+      </section>
+      <section class="rodape-coluna" aria-labelledby="rodape-conta">
+        <h2 id="rodape-conta">MINHA CONTA</h2>
+        <ul>
+          <li><a href="index.html?v=produtos-1">Entrar</a></li>
+          <li><a href="criar-conta.html?v=produtos-1">Criar conta</a></li>
+          <li><a href="carrinho.html?v=produtos-1">Meu carrinho</a></li>
+        </ul>
+      </section>
+      <section class="rodape-coluna rodape-classicos" aria-labelledby="rodape-classicos">
+        <h2 id="rodape-classicos">CL�SSICOS DE VERDADE</h2>
+        <p>Videogames, televisores, c�meras e �udio.<br>Encontre a pr�xima pe�a da sua cole��o.</p>
+        <a class="rodape-explorar" href="home.html?v=produtos-1#ofertas">Explorar produtos <span aria-hidden="true"></span></a>
+      </section>
+    </div>
+    <div class="rodape-base">
+      <p>� 2026 NovaTech</p>
+      <p>Site demonstrativo. Compras n�o s�o processadas.</p>
+      <a href="#topo">Voltar ao topo <span aria-hidden="true"></span></a>
+    </div>
+  </footer>
 </div>
 </body>
 </html>
+

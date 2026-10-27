@@ -178,3 +178,8 @@ footer { background: #201C12; height: 11.4em; }
   .anuncio, .anuncios-menores .anuncio { padding: 24px; }
   .anuncio h2 { font-size: 3.5em; }
 }
+
+/* Acesso � p�gina de cada produto. */
+.abrir-produto { display: block; }
+.produto h3 a:hover { color: #ac421d; text-decoration: underline; }
+

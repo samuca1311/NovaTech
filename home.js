@@ -1,4 +1,4 @@
-// Demonstração. Somente o carrinho é salvo neste navegador.
+// Demonstra��o. Somente o carrinho � salvo neste navegador.
 var aviso = document.getElementById('mensagem-home');
 var tempoAviso;
 function mostrarMensagem(texto) {
@@ -8,36 +8,29 @@ function mostrarMensagem(texto) {
   tempoAviso = setTimeout(function () { aviso.hidden = true; }, 4500);
 }
 
-// Os botões usam os dados do cartão clicado.
+// Os bot�es usam os dados do cart�o clicado.
 var botoesAdicionar = document.querySelectorAll('.adicionar');
 for (var i = 0; i < botoesAdicionar.length; i++) {
   botoesAdicionar[i].addEventListener('click', function () {
     var cartao = this.closest('.produto');
     var nome = cartao.querySelector('h3').textContent;
-    var itens = lerCarrinho();
-    var existente = itens.find(function (item) { return item.id === nome; });
-    if (precoDoProduto(nome) === null) { mostrarMensagem('Preço indisponível para este produto.'); return; }
-    if (existente) {
-      existente.quantidade = Math.min(99, existente.quantidade + 1);
-    } else {
-      itens.push({ id: nome, nome: nome, categoria: cartao.getAttribute('data-categoria'),
-        imagem: cartao.querySelector('.foto-produto img').getAttribute('src'), quantidade: 1 });
-    }
-    if (salvarCarrinho(itens)) window.location.href = 'carrinho.html?v=precos-1';
-    else mostrarMensagem('Não foi possível salvar o carrinho neste navegador.');
+    var produto = { nome: nome, categoria: cartao.getAttribute('data-categoria'),
+      imagem: cartao.querySelector('.foto-produto img').getAttribute('src') };
+    if (adicionarAoCarrinho(produto, 1)) window.location.href = 'carrinho.html?v=produtos-1';
+    else mostrarMensagem('N�o foi poss�vel salvar o carrinho neste navegador.');
   });
 }
 document.getElementById('carrinho').addEventListener('click', function () {
-  window.location.href = 'carrinho.html?v=precos-1';
+  window.location.href = 'carrinho.html?v=produtos-1';
 });
 document.getElementById('favoritos').addEventListener('click', function () {
-  mostrarMensagem('Você ainda não tem favoritos nesta demonstração.');
+  mostrarMensagem('Voc� ainda n�o tem favoritos nesta demonstra��o.');
 });
 document.getElementById('sobre').addEventListener('click', function () {
-  mostrarMensagem('NovaTech: tecnologia vintage, história em cada detalhe.');
+  mostrarMensagem('NovaTech: tecnologia vintage, hist�ria em cada detalhe.');
 });
 
-// Busca simples pelos nomes e categorias dos cartões já presentes no HTML.
+// Busca simples pelos nomes e categorias dos cart�es j� presentes no HTML.
 var produtos = document.querySelectorAll('.produto');
 var resultado = document.getElementById('resultado-busca');
 function filtrarProdutos(texto) {
@@ -57,11 +50,11 @@ document.getElementById('form-busca').addEventListener('submit', function (event
 });
 document.getElementById('form-novidades').addEventListener('submit', function (evento) {
   evento.preventDefault();
-  mostrarMensagem('Inscrição simulada! Nenhum e-mail foi enviado ou armazenado.');
+  mostrarMensagem('Inscri��o simulada! Nenhum e-mail foi enviado ou armazenado.');
   this.reset();
 });
 
-// Contagem apenas visual, reiniciada quando a página é aberta.
+// Contagem apenas visual, reiniciada quando a p�gina � aberta.
 var segundos = 4 * 3600 + 6 * 60 + 31;
 setInterval(function () {
   if (segundos > 0) segundos--;
@@ -70,3 +63,12 @@ setInterval(function () {
   var resto = segundos % 60;
   document.getElementById('contador').textContent = String(horas).padStart(2, '0') + ':' + String(minutos).padStart(2, '0') + ':' + String(resto).padStart(2, '0');
 }, 1000);
+
+// A busca de outras p�ginas tamb�m abre os resultados na Home.
+var buscaRecebida = new URLSearchParams(window.location.search).get('busca');
+if (buscaRecebida) {
+  document.getElementById('buscar').value = buscaRecebida;
+  filtrarProdutos(buscaRecebida);
+  document.getElementById('ofertas').scrollIntoView();
+}
+
