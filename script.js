@@ -9,7 +9,7 @@ var botoesSociais = document.querySelectorAll(".social");
 if (formLogin) {
   formLogin.addEventListener("submit", function (evento) {
     evento.preventDefault();
-    window.location.href = "home.html?v=produtos-1";
+    window.location.href = "home.html?v=produtos-2";
   });
 }
 

@@ -27,18 +27,18 @@ function calcularSubtotal(itens) {
   return soma;
 }
 var paginasProdutos = {
-  "Nintendo Game Boy Classic": "produto-gameboy.html?v=produtos-1",
-  "TV SONY TRINITRON KV-1310": "produto-tv-trinitron.html?v=produtos-1",
-  "Sony Discman": "produto-discman.html?v=produtos-1",
-  "Polaroid OneStep SX-70": "produto-polaroid.html?v=produtos-1",
-  "Filmadora Analógica Vintage": "produto-filmadora.html?v=produtos-1",
-  "SONY PLAYSTATION 1 (PS1)": "produto-playstation.html?v=produtos-1",
-  "NINTENDO 64 (N64)": "produto-nintendo64.html?v=produtos-1",
-  "SUPER NINTENDO": "produto-super-nintendo.html?v=produtos-1",
-  "Sony Walkman": "produto-walkman.html?v=produtos-1"
+  "Nintendo Game Boy Classic": "produto-gameboy.html?v=produtos-2",
+  "TV SONY TRINITRON KV-1310": "produto-tv-trinitron.html?v=produtos-2",
+  "Sony Discman": "produto-discman.html?v=produtos-2",
+  "Polaroid OneStep SX-70": "produto-polaroid.html?v=produtos-2",
+  "Filmadora Analógica Vintage": "produto-filmadora.html?v=produtos-2",
+  "SONY PLAYSTATION 1 (PS1)": "produto-playstation.html?v=produtos-2",
+  "NINTENDO 64 (N64)": "produto-nintendo64.html?v=produtos-2",
+  "SUPER NINTENDO": "produto-super-nintendo.html?v=produtos-2",
+  "Sony Walkman": "produto-walkman.html?v=produtos-2"
 };
 function paginaDoProduto(nome) {
-  return Object.prototype.hasOwnProperty.call(paginasProdutos, nome) ? paginasProdutos[nome] : "home.html?v=produtos-1";
+  return Object.prototype.hasOwnProperty.call(paginasProdutos, nome) ? paginasProdutos[nome] : "home.html?v=produtos-2";
 }
 function adicionarAoCarrinho(produto, quantidade) {
   if (precoDoProduto(produto.nome) === null || !Number.isInteger(quantidade) || quantidade < 1 || quantidade > 99) return false;
