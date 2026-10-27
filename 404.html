@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaTech</title>
+  <script>
+    // Mantém os links antigos funcionando depois da organização das pastas.
+    var destinos = {
+      "criar-conta.html": "criar-conta/index.html",
+      "home.html": "home/index.html",
+      "carrinho.html": "carrinho/index.html",
+      "produto-discman.html": "produtos/discman.html",
+      "produto-filmadora.html": "produtos/filmadora.html",
+      "produto-gameboy.html": "produtos/gameboy.html",
+      "produto-nintendo64.html": "produtos/nintendo64.html",
+      "produto-playstation.html": "produtos/playstation.html",
+      "produto-polaroid.html": "produtos/polaroid.html",
+      "produto-super-nintendo.html": "produtos/super-nintendo.html",
+      "produto-tv-trinitron.html": "produtos/tv-trinitron.html",
+      "produto-walkman.html": "produtos/walkman.html"
+    };
+    var arquivo = window.location.pathname.split("/").pop();
+    if (Object.prototype.hasOwnProperty.call(destinos, arquivo)) {
+      var pasta = window.location.pathname.slice(0, window.location.pathname.lastIndexOf("/") + 1);
+      var parametros = new URLSearchParams(window.location.search);
+      parametros.set("v", "pastas-1");
+      window.location.replace(pasta + destinos[arquivo] + "?" + parametros.toString() + window.location.hash);
+    }
+  </script>
+</head>
+<body>
+  <h1>Página não encontrada</h1>
+  <p><a href="home/index.html?v=pastas-1">Voltar para a loja NovaTech</a></p>
+</body>
+</html>

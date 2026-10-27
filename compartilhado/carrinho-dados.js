@@ -1,4 +1,9 @@
 // Carrinho de demonstração salvo somente neste navegador.
+// As imagens são armazenadas a partir de assets/, independente da pasta da página.
+function normalizarImagem(caminho) {
+  return typeof caminho === 'string' ? caminho.replace(/^(?:\.\.\/|\.\/)+/, '') : '';
+}
+
 // Valores em centavos para evitar erros de arredondamento.
 var precosProdutos = {
   "Nintendo Game Boy Classic": 49900,
@@ -27,25 +32,25 @@ function calcularSubtotal(itens) {
   return soma;
 }
 var paginasProdutos = {
-  "Nintendo Game Boy Classic": "produto-gameboy.html?v=produtos-2",
-  "TV SONY TRINITRON KV-1310": "produto-tv-trinitron.html?v=produtos-2",
-  "Sony Discman": "produto-discman.html?v=produtos-2",
-  "Polaroid OneStep SX-70": "produto-polaroid.html?v=produtos-2",
-  "Filmadora Analógica Vintage": "produto-filmadora.html?v=produtos-2",
-  "SONY PLAYSTATION 1 (PS1)": "produto-playstation.html?v=produtos-2",
-  "NINTENDO 64 (N64)": "produto-nintendo64.html?v=produtos-2",
-  "SUPER NINTENDO": "produto-super-nintendo.html?v=produtos-2",
-  "Sony Walkman": "produto-walkman.html?v=produtos-2"
+  "Nintendo Game Boy Classic": "../produtos/gameboy.html?v=pastas-1",
+  "TV SONY TRINITRON KV-1310": "../produtos/tv-trinitron.html?v=pastas-1",
+  "Sony Discman": "../produtos/discman.html?v=pastas-1",
+  "Polaroid OneStep SX-70": "../produtos/polaroid.html?v=pastas-1",
+  "Filmadora Analógica Vintage": "../produtos/filmadora.html?v=pastas-1",
+  "SONY PLAYSTATION 1 (PS1)": "../produtos/playstation.html?v=pastas-1",
+  "NINTENDO 64 (N64)": "../produtos/nintendo64.html?v=pastas-1",
+  "SUPER NINTENDO": "../produtos/super-nintendo.html?v=pastas-1",
+  "Sony Walkman": "../produtos/walkman.html?v=pastas-1"
 };
 function paginaDoProduto(nome) {
-  return Object.prototype.hasOwnProperty.call(paginasProdutos, nome) ? paginasProdutos[nome] : "home.html?v=produtos-2";
+  return Object.prototype.hasOwnProperty.call(paginasProdutos, nome) ? paginasProdutos[nome] : "../home/index.html?v=pastas-1";
 }
 function adicionarAoCarrinho(produto, quantidade) {
   if (precoDoProduto(produto.nome) === null || !Number.isInteger(quantidade) || quantidade < 1 || quantidade > 99) return false;
   var itens = lerCarrinho();
   var existente = itens.find(function (item) { return item.id === produto.nome; });
   if (existente) existente.quantidade = Math.min(99, existente.quantidade + quantidade);
-  else itens.push({ id: produto.nome, nome: produto.nome, categoria: produto.categoria, imagem: produto.imagem, quantidade: quantidade });
+  else itens.push({ id: produto.nome, nome: produto.nome, categoria: produto.categoria, imagem: normalizarImagem(produto.imagem), quantidade: quantidade });
   return salvarCarrinho(itens);
 }
 var chaveCarrinho = 'novatech-carrinho-v1';
@@ -66,6 +71,7 @@ function lerCarrinho() {
         item.nome = item.id; item.categoria = 'Video Games'; item.imagem = 'assets/home/gameboy.png';
       }
     });
+    itens.forEach(function (item) { if (item) item.imagem = normalizarImagem(item.imagem); });
     return itens.filter(function (item) {
       return item && typeof item.id === 'string' && typeof item.nome === 'string'
         && Number.isInteger(item.quantidade) && item.quantidade > 0 && item.quantidade <= 99;

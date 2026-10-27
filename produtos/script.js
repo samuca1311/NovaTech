@@ -34,7 +34,7 @@ document.getElementById('form-compra').addEventListener('submit', function (even
     imagem: paginaProduto.getAttribute('data-imagem')
   };
   if (adicionarAoCarrinho(produto, Number(campoQuantidade.value))) {
-    window.location.href = 'carrinho.html?v=produtos-2';
+    window.location.href = '../carrinho/index.html?v=pastas-1';
   } else mensagemProduto('Não foi possível adicionar o produto ao carrinho.');
 });
 var curtirProduto = document.getElementById('curtir-produto');
@@ -44,7 +44,7 @@ curtirProduto.onclick = function () {
   mensagemProduto(curtido ? 'Produto curtido nesta demonstração.' : 'Curtida removida.');
 };
 document.getElementById('carrinho').onclick = function () {
-  window.location.href = 'carrinho.html?v=produtos-2';
+  window.location.href = '../carrinho/index.html?v=pastas-1';
 };
 document.getElementById('favoritos').onclick = function () {
   mensagemProduto('Os favoritos são apenas demonstrativos por enquanto.');
@@ -58,7 +58,7 @@ for (var i = 0; i < relacionados.length; i++) {
       categoria: cartao.getAttribute('data-categoria'),
       imagem: cartao.querySelector('.foto-produto img').getAttribute('src')
     };
-    if (adicionarAoCarrinho(produto, 1)) window.location.href = 'carrinho.html?v=produtos-2';
+    if (adicionarAoCarrinho(produto, 1)) window.location.href = '../carrinho/index.html?v=pastas-1';
     else mensagemProduto('Não foi possível adicionar o produto ao carrinho.');
   });
 }

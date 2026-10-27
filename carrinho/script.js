@@ -11,7 +11,7 @@ function desenharCarrinho() {
     linha.className = 'item-carrinho';
     if (item.imagem && /^assets\/home\/[a-z0-9-]+\.png$/.test(item.imagem)) {
       var foto = document.createElement('img');
-      foto.className = 'imagem-item'; foto.src = item.imagem; foto.alt = item.nome; linha.appendChild(foto);
+      foto.className = 'imagem-item'; foto.src = '../' + item.imagem; foto.alt = item.nome; linha.appendChild(foto);
     } else {
       var foto = document.createElement('div');
       foto.className = 'imagem-item sem-imagem'; foto.textContent = '□'; foto.setAttribute('aria-hidden', 'true'); linha.appendChild(foto);

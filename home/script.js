@@ -16,12 +16,12 @@ for (var i = 0; i < botoesAdicionar.length; i++) {
     var nome = cartao.querySelector('h3').textContent;
     var produto = { nome: nome, categoria: cartao.getAttribute('data-categoria'),
       imagem: cartao.querySelector('.foto-produto img').getAttribute('src') };
-    if (adicionarAoCarrinho(produto, 1)) window.location.href = 'carrinho.html?v=produtos-2';
+    if (adicionarAoCarrinho(produto, 1)) window.location.href = '../carrinho/index.html?v=pastas-1';
     else mostrarMensagem('Não foi possível salvar o carrinho neste navegador.');
   });
 }
 document.getElementById('carrinho').addEventListener('click', function () {
-  window.location.href = 'carrinho.html?v=produtos-2';
+  window.location.href = '../carrinho/index.html?v=pastas-1';
 });
 document.getElementById('favoritos').addEventListener('click', function () {
   mostrarMensagem('Você ainda não tem favoritos nesta demonstração.');
