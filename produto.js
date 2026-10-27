@@ -1,4 +1,4 @@
-// Intera��es simples da p�gina de produto.
+// Interações simples da página de produto.
 var paginaProduto = document.getElementById('pagina-produto');
 var campoQuantidade = document.getElementById('quantidade-produto');
 var diminuirProduto = document.getElementById('diminuir-produto');
@@ -35,19 +35,19 @@ document.getElementById('form-compra').addEventListener('submit', function (even
   };
   if (adicionarAoCarrinho(produto, Number(campoQuantidade.value))) {
     window.location.href = 'carrinho.html?v=produtos-1';
-  } else mensagemProduto('N�o foi poss�vel adicionar o produto ao carrinho.');
+  } else mensagemProduto('Não foi possível adicionar o produto ao carrinho.');
 });
 var curtirProduto = document.getElementById('curtir-produto');
 curtirProduto.onclick = function () {
   var curtido = this.getAttribute('aria-pressed') !== 'true';
   this.setAttribute('aria-pressed', String(curtido));
-  mensagemProduto(curtido ? 'Produto curtido nesta demonstra��o.' : 'Curtida removida.');
+  mensagemProduto(curtido ? 'Produto curtido nesta demonstração.' : 'Curtida removida.');
 };
 document.getElementById('carrinho').onclick = function () {
   window.location.href = 'carrinho.html?v=produtos-1';
 };
 document.getElementById('favoritos').onclick = function () {
-  mensagemProduto('Os favoritos s�o apenas demonstrativos por enquanto.');
+  mensagemProduto('Os favoritos são apenas demonstrativos por enquanto.');
 };
 var relacionados = document.querySelectorAll('.produto .adicionar');
 for (var i = 0; i < relacionados.length; i++) {
@@ -59,7 +59,6 @@ for (var i = 0; i < relacionados.length; i++) {
       imagem: cartao.querySelector('.foto-produto img').getAttribute('src')
     };
     if (adicionarAoCarrinho(produto, 1)) window.location.href = 'carrinho.html?v=produtos-1';
-    else mensagemProduto('N�o foi poss�vel adicionar o produto ao carrinho.');
+    else mensagemProduto('Não foi possível adicionar o produto ao carrinho.');
   });
 }
-

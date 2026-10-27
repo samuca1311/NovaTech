@@ -22,7 +22,8 @@
       <a href="home.html?v=produtos-1#novidades">NOVIDADES</a>
       <a href="home.html?v=produtos-1">SOBRE</a>
     </nav>
-    <form class="busca" action="home.html?v=produtos-1" role="search">
+    <form class="busca" action="home.html" role="search">
+      <input type="hidden" name="v" value="produtos-1">
       <button type="submit" aria-label="Buscar produtos"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"></circle><path d="m15 15 6 6"></path></svg></button>
       <input type="search" id="buscar" name="busca" aria-label="Buscar produtos">
     </form>
@@ -38,36 +39,36 @@
       <p class="introducao">Confira os produtos adicionados e finalize sua compra</p>
       <div class="lista-itens" id="lista-itens"></div>
       <div class="carrinho-vazio" id="carrinho-vazio" hidden>
-        <h2>Seu carrinho est� vazio</h2><p>Explore a loja e adicione seus produtos favoritos.</p>
+        <h2>Seu carrinho está vazio</h2><p>Explore a loja e adicione seus produtos favoritos.</p>
       </div>
-      <a href="home.html?v=produtos-1" class="continuar"><span aria-hidden="true"></span> Continuar Comprando</a>
+      <a href="home.html?v=produtos-1" class="continuar"><span aria-hidden="true">←</span> Continuar Comprando</a>
     </section>
     <aside class="resumo" aria-labelledby="titulo-resumo">
-      <div class="arte-resumo" aria-hidden="true"><div></div><span>?</span></div>
+      <div class="arte-resumo" aria-hidden="true"><div></div><span>✷</span></div>
       <div class="resumo-conteudo">
         <h2 id="titulo-resumo">Resumo do pedido</h2>
-        <p class="linha-resumo"><span id="subtotal">Subtotal (1 item)</span><span id="valor-subtotal">-</span></p>
+        <p class="linha-resumo"><span id="subtotal">Subtotal (1 item)</span><span id="valor-subtotal">—</span></p>
         <p class="linha-resumo"><span>Frete</span><span>A calcular</span></p>
         <hr>
-        <p class="linha-resumo total"><strong>Total estimado</strong><strong id="valor-total">-</strong></p>
-        <p class="nota-frete">O frete ser� calculado na finaliza��o da compra.</p>
+        <p class="linha-resumo total"><strong>Total estimado</strong><strong id="valor-total">—</strong></p>
+        <p class="nota-frete">O frete será calculado na finalização da compra.</p>
         <form class="cupom" id="form-cupom"><label class="leitor" for="cupom">Cupom de desconto</label><input id="cupom" placeholder="Cupom de desconto"><button type="submit">Aplicar</button></form>
-        <button class="finalizar" id="finalizar" type="button"><span aria-hidden="true">?</span> Finalizar compra <span aria-hidden="true"></span></button>
+        <button class="finalizar" id="finalizar" type="button"><span aria-hidden="true">♧</span> Finalizar compra <span aria-hidden="true">→</span></button>
         <div class="seguranca">
-          <p><span aria-hidden="true">?</span><span><strong>Compra Segura</strong><small>Seus dados protegidos</small></span></p>
-          <p><span aria-hidden="true">?</span><span><strong>Entrega para</strong><small>todo o Brasil</small></span></p>
-          <p><span aria-hidden="true">?</span><span><strong>Diversas formas</strong><small>de pagamento</small></span></p>
+          <p><span aria-hidden="true">♢</span><span><strong>Compra Segura</strong><small>Seus dados protegidos</small></span></p>
+          <p><span aria-hidden="true">▱</span><span><strong>Entrega para</strong><small>todo o Brasil</small></span></p>
+          <p><span aria-hidden="true">▤</span><span><strong>Diversas formas</strong><small>de pagamento</small></span></p>
         </div>
       </div>
     </aside>
     <p class="aviso-carrinho" id="aviso-carrinho" role="status" aria-live="polite"></p>
   </main>
-  <footer class="rodape-site" aria-label="Rodap� da NovaTech">
+  <footer class="rodape-site" aria-label="Rodapé da NovaTech">
     <div class="rodape-principal">
       <div class="rodape-marca" id="sobre-novatech">
-        <a href="home.html?v=produtos-1" aria-label="NovaTech - ir para a loja"><img src="assets/home/logo-novatech.png" alt="NovaTech" width="148" height="70" loading="lazy"></a>
-        <p>Tecnologia vintage,<br>hist�ria em cada detalhe.</p>
-        <span class="rodape-assinatura">Uma nova vida para os cl�ssicos.</span>
+        <a href="home.html?v=produtos-1" aria-label="NovaTech — ir para a loja"><img src="assets/home/logo-novatech.png" alt="NovaTech" width="148" height="70" loading="lazy"></a>
+        <p>Tecnologia vintage,<br>história em cada detalhe.</p>
+        <span class="rodape-assinatura">Uma nova vida para os clássicos.</span>
       </div>
       <section class="rodape-coluna" aria-labelledby="rodape-loja">
         <h2 id="rodape-loja">EXPLORE A LOJA</h2>
@@ -87,18 +88,17 @@
         </ul>
       </section>
       <section class="rodape-coluna rodape-classicos" aria-labelledby="rodape-classicos">
-        <h2 id="rodape-classicos">CL�SSICOS DE VERDADE</h2>
-        <p>Videogames, televisores, c�meras e �udio.<br>Encontre a pr�xima pe�a da sua cole��o.</p>
-        <a class="rodape-explorar" href="home.html?v=produtos-1#ofertas">Explorar produtos <span aria-hidden="true"></span></a>
+        <h2 id="rodape-classicos">CLÁSSICOS DE VERDADE</h2>
+        <p>Videogames, televisores, câmeras e áudio.<br>Encontre a próxima peça da sua coleção.</p>
+        <a class="rodape-explorar" href="home.html?v=produtos-1#ofertas">Explorar produtos <span aria-hidden="true">→</span></a>
       </section>
     </div>
     <div class="rodape-base">
-      <p>� 2026 NovaTech</p>
-      <p>Site demonstrativo. Compras n�o s�o processadas.</p>
-      <a href="#topo">Voltar ao topo <span aria-hidden="true"></span></a>
+      <p>© 2026 NovaTech</p>
+      <p>Site demonstrativo. Compras não são processadas.</p>
+      <a href="#topo">Voltar ao topo <span aria-hidden="true">↑</span></a>
     </div>
   </footer>
 </div>
 </body>
 </html>
-

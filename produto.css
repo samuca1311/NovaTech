@@ -1,13 +1,13 @@
-/* P�ginas de produto: HTML separado, estilos compartilhados. */
+/* Páginas de produto: HTML separado, estilos compartilhados. */
 .pagina-produto { padding: 48px 3% 56px; }
 .voltar-produtos { display: inline-flex; align-items: center; gap: 14px; margin: 0 0 28px; font-size: 19px; }
 .voltar-produtos span { font: 28px Arial, sans-serif; }
 .visao-produto { display: flex; align-items: stretch; gap: 3%; }
-.galeria-produto { width: 51%; min-width: 0; display: flex; align-items: flex-start; gap: 22px; }
-.miniaturas-produto { width: 88px; flex-shrink: 0; padding: 7px; border: 1px solid #b4aa8f; background: #e7dec6; border-radius: 12px; }
+.galeria-produto { width: 51%; min-width: 0; display: flex; align-items: flex-start; gap: 52px; }
+.miniaturas-produto { width: 125px; flex-shrink: 0; padding: 7px; border: 1px solid #b4aa8f; background: #e7dec6; border-radius: 12px; }
 .miniaturas-produto img { display: block; width: 100%; height: auto; border-radius: 6px; }
 .miniaturas-produto span { display: block; text-align: center; margin-top: 8px; font-size: 11px; color: #201c12ab; }
-.foto-principal { width: calc(100% - 110px); height: auto; aspect-ratio: 642 / 488; object-fit: cover; border-radius: 12px; align-self: flex-start; }
+.foto-principal { width: calc(100% - 177px); height: auto; aspect-ratio: 642 / 488; object-fit: cover; border-radius: 12px; align-self: flex-start; }
 .compra-produto { width: 46%; min-width: 0; border: 1px solid #c6bfa9; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
 .categoria-produto { align-self: flex-start; border: 1px solid #bbb198; border-radius: 14px; padding: 5px 13px; font-size: 11px; }
 .compra-produto h1 { margin: 12px 0; font-size: clamp(30px, 2.8vw, 48px); font-weight: 900; line-height: 1.05; overflow-wrap: anywhere; }
@@ -92,4 +92,3 @@
   .descricao-produto, .ficha-produto { width: 100%; border: 0; padding-left: 0; }
   .ficha-produto h2 { margin-top: 0; }
 }
-

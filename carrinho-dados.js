@@ -1,11 +1,11 @@
-// Carrinho de demonstra��o salvo somente neste navegador.
+// Carrinho de demonstração salvo somente neste navegador.
 // Valores em centavos para evitar erros de arredondamento.
 var precosProdutos = {
   "Nintendo Game Boy Classic": 49900,
   "TV SONY TRINITRON KV-1310": 99999,
   "Sony Discman": 39900,
   "Polaroid OneStep SX-70": 54900,
-  "Filmadora Anal�gica Vintage": 69900,
+  "Filmadora Analógica Vintage": 69900,
   "SONY PLAYSTATION 1 (PS1)": 64999,
   "NINTENDO 64 (N64)": 89999,
   "SUPER NINTENDO": 74999,
@@ -31,7 +31,7 @@ var paginasProdutos = {
   "TV SONY TRINITRON KV-1310": "produto-tv-trinitron.html?v=produtos-1",
   "Sony Discman": "produto-discman.html?v=produtos-1",
   "Polaroid OneStep SX-70": "produto-polaroid.html?v=produtos-1",
-  "Filmadora Anal�gica Vintage": "produto-filmadora.html?v=produtos-1",
+  "Filmadora Analógica Vintage": "produto-filmadora.html?v=produtos-1",
   "SONY PLAYSTATION 1 (PS1)": "produto-playstation.html?v=produtos-1",
   "NINTENDO 64 (N64)": "produto-nintendo64.html?v=produtos-1",
   "SUPER NINTENDO": "produto-super-nintendo.html?v=produtos-1",
@@ -59,7 +59,7 @@ function lerCarrinho() {
     }
     var itens = JSON.parse(salvo);
     if (!Array.isArray(itens)) return [];
-    // Atualiza o antigo item gen�rico de teste sem apagar o carrinho.
+    // Atualiza o antigo item genérico de teste sem apagar o carrinho.
     itens.forEach(function (item) {
       if (item && item.id === 'teste') {
         item.id = 'Nintendo Game Boy Classic';
@@ -87,4 +87,3 @@ function atualizarContadorCarrinho() {
 }
 atualizarContadorCarrinho();
 window.addEventListener('pageshow', atualizarContadorCarrinho);
-
