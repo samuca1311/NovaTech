@@ -16,18 +16,19 @@ for (var i = 0; i < botoesAdicionar.length; i++) {
     var nome = cartao.querySelector('h3').textContent;
     var itens = lerCarrinho();
     var existente = itens.find(function (item) { return item.id === nome; });
+    if (precoDoProduto(nome) === null) { mostrarMensagem('Preço indisponível para este produto.'); return; }
     if (existente) {
       existente.quantidade = Math.min(99, existente.quantidade + 1);
     } else {
       itens.push({ id: nome, nome: nome, categoria: cartao.getAttribute('data-categoria'),
         imagem: cartao.querySelector('.foto-produto img').getAttribute('src'), quantidade: 1 });
     }
-    if (salvarCarrinho(itens)) window.location.href = 'carrinho.html';
+    if (salvarCarrinho(itens)) window.location.href = 'carrinho.html?v=precos-1';
     else mostrarMensagem('Não foi possível salvar o carrinho neste navegador.');
   });
 }
 document.getElementById('carrinho').addEventListener('click', function () {
-  window.location.href = 'carrinho.html';
+  window.location.href = 'carrinho.html?v=precos-1';
 });
 document.getElementById('favoritos').addEventListener('click', function () {
   mostrarMensagem('Você ainda não tem favoritos nesta demonstração.');
@@ -39,37 +40,19 @@ document.getElementById('sobre').addEventListener('click', function () {
 // Busca simples pelos nomes e categorias dos cartões já presentes no HTML.
 var produtos = document.querySelectorAll('.produto');
 var resultado = document.getElementById('resultado-busca');
-function filtrarProdutos(texto, categoria) {
+function filtrarProdutos(texto) {
   var encontrados = 0;
   for (var i = 0; i < produtos.length; i++) {
-    var nome = produtos[i].textContent.toLowerCase();
-    var tipo = produtos[i].getAttribute('data-categoria');
-    var mostrar = nome.indexOf(texto.toLowerCase()) !== -1;
-    if (categoria) {
-      mostrar = tipo === categoria;
-      if (categoria === 'Filmadora') mostrar = nome.indexOf('filmadora') !== -1;
-    }
+    var mostrar = produtos[i].textContent.toLowerCase().indexOf(texto.toLowerCase()) !== -1;
     produtos[i].hidden = !mostrar;
     if (mostrar) encontrados++;
   }
-  resultado.hidden = !texto && !categoria;
-  resultado.textContent = encontrados ? 'Produtos encontrados para: ' + (categoria || texto) : 'Nenhum produto encontrado. Use a busca vazia ou Ver mais para mostrar todos.';
+  resultado.hidden = !texto;
+  resultado.textContent = encontrados ? 'Produtos encontrados para: ' + texto : 'Nenhum produto encontrado. Limpe a busca para mostrar todos.';
 }
 document.getElementById('form-busca').addEventListener('submit', function (evento) {
   evento.preventDefault();
-  filtrarProdutos(document.getElementById('buscar').value.trim(), '');
-  document.getElementById('ofertas').scrollIntoView();
-});
-var categorias = document.querySelectorAll('.categoria');
-for (var i = 0; i < categorias.length; i++) {
-  categorias[i].addEventListener('click', function () {
-    filtrarProdutos('', this.getAttribute('data-filtro'));
-    document.getElementById('ofertas').scrollIntoView();
-  });
-}
-document.getElementById('todas-categorias').addEventListener('click', function () {
-  document.getElementById('buscar').value = '';
-  filtrarProdutos('', '');
+  filtrarProdutos(document.getElementById('buscar').value.trim());
   document.getElementById('ofertas').scrollIntoView();
 });
 document.getElementById('form-novidades').addEventListener('submit', function (evento) {

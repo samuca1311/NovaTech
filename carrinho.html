@@ -6,22 +6,22 @@
   <title>Meu Carrinho | NovaTech</title>
   <link rel="stylesheet" href="assets/fontes.css">
   <link rel="stylesheet" href="home.css?v=desktop-1">
-  <link rel="stylesheet" href="carrinho.css?v=1">
-  <script src="carrinho-dados.js?v=1" defer></script>
-  <script src="carrinho.js?v=1" defer></script>
+  <link rel="stylesheet" href="carrinho.css?v=precos-1">
+  <script src="carrinho-dados.js?v=precos-1" defer></script>
+  <script src="carrinho.js?v=precos-1" defer></script>
 </head>
 <body>
 <div class="pagina">
   <header class="cabecalho" id="inicio">
-    <a href="home.html?v=carrinho-1" class="logo"><img src="assets/home/logo-novatech.png" alt="NovaTech"></a>
+    <a href="home.html?v=precos-1" class="logo"><img src="assets/home/logo-novatech.png" alt="NovaTech"></a>
     <nav aria-label="Menu principal">
-      <a class="link-loja" href="home.html?v=carrinho-1#inicio">LOJA</a>
-      <a href="home.html?v=carrinho-1#categorias">CATEGORIAS</a>
-      <a href="home.html?v=carrinho-1#ofertas">OFERTAS</a>
-      <a href="home.html?v=carrinho-1#novidades">NOVIDADES</a>
-      <a href="home.html?v=carrinho-1">SOBRE</a>
+      <a class="link-loja" href="home.html?v=precos-1#inicio">LOJA</a>
+      <a href="home.html?v=precos-1#categorias">CATEGORIAS</a>
+      <a href="home.html?v=precos-1#ofertas">OFERTAS</a>
+      <a href="home.html?v=precos-1#novidades">NOVIDADES</a>
+      <a href="home.html?v=precos-1">SOBRE</a>
     </nav>
-    <form class="busca" action="home.html?v=carrinho-1" role="search">
+    <form class="busca" action="home.html?v=precos-1" role="search">
       <button type="submit" aria-label="Buscar produtos"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"></circle><path d="m15 15 6 6"></path></svg></button>
       <input type="search" id="buscar" name="busca" aria-label="Buscar produtos">
     </form>
@@ -39,16 +39,17 @@
       <div class="carrinho-vazio" id="carrinho-vazio" hidden>
         <h2>Seu carrinho está vazio</h2><p>Explore a loja e adicione seus produtos favoritos.</p>
       </div>
-      <a href="home.html?v=carrinho-1" class="continuar"><span aria-hidden="true">←</span> Continuar Comprando</a>
+      <a href="home.html?v=precos-1" class="continuar"><span aria-hidden="true">←</span> Continuar Comprando</a>
     </section>
     <aside class="resumo" aria-labelledby="titulo-resumo">
       <div class="arte-resumo" aria-hidden="true"><div></div><span>✷</span></div>
       <div class="resumo-conteudo">
         <h2 id="titulo-resumo">Resumo do pedido</h2>
-        <p class="linha-resumo"><span id="subtotal">Subtotal (1 item)</span><span>—</span></p>
+        <p class="linha-resumo"><span id="subtotal">Subtotal (1 item)</span><span id="valor-subtotal">—</span></p>
         <p class="linha-resumo"><span>Frete</span><span>A calcular</span></p>
         <hr>
-        <p class="linha-resumo total"><strong>Total estimado</strong><strong>—</strong></p>
+        <p class="linha-resumo total"><strong>Total estimado</strong><strong id="valor-total">—</strong></p>
+        <p class="nota-frete">O frete será calculado na finalização da compra.</p>
         <form class="cupom" id="form-cupom"><label class="leitor" for="cupom">Cupom de desconto</label><input id="cupom" placeholder="Cupom de desconto"><button type="submit">Aplicar</button></form>
         <button class="finalizar" id="finalizar" type="button"><span aria-hidden="true">♧</span> Finalizar compra <span aria-hidden="true">→</span></button>
         <div class="seguranca">

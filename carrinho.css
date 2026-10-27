@@ -57,3 +57,18 @@ button:disabled { opacity: .45; cursor: default; }
   .linha-resumo { font-size: 15px; } .cupom { gap: 10px; }
   .cupom button { padding: 18px 14px; }
 }
+
+.preco-unitario { display: block; margin-top: 10px; color: #201c12ab; font: 12px 'Inter', Arial, sans-serif; }
+.valor-item { flex-shrink: 0; color: #ac421d; font-size: 26px; white-space: nowrap; }
+.nota-frete { margin: -18px 10px 24px; color: #201c12ab; font: 12px/1.5 'Inter', Arial, sans-serif; }
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .item-carrinho { gap: 12px; }
+  .imagem-item { width: 100px; height: 100px; }
+  .nome-item h2 { font-size: 20px; overflow-wrap: anywhere; }
+  .nome-item p { font-size: 13px; }
+  .valor-item { font-size: 19px; }
+  .controle-quantidade button { width: 28px; }
+  .controle-quantidade output { min-width: 24px; }
+  .excluir { width: 36px; }
+  .estado-item { font-size: 10px; padding: 5px; }
+}

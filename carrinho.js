@@ -20,7 +20,11 @@ function desenharCarrinho() {
     var nome = document.createElement('h2'); nome.textContent = item.nome;
     var categoria = document.createElement('p'); categoria.textContent = item.categoria || '';
     var estado = document.createElement('span'); estado.className = 'estado-item'; estado.textContent = item.id === 'teste' ? 'Item para demonstração' : 'Usado - Revisado e testado';
-    dados.append(nome, categoria, estado); linha.appendChild(dados);
+    var unitario = document.createElement('small');
+    unitario.className = 'preco-unitario';
+    var preco = precoDoProduto(item.nome);
+    unitario.textContent = preco === null ? 'Preço indisponível' : formatarPreco(preco) + ' por unidade';
+    dados.append(nome, categoria, estado, unitario); linha.appendChild(dados);
     var controle = document.createElement('div'); controle.className = 'controle-quantidade';
     var menos = document.createElement('button'); menos.type = 'button'; menos.textContent = '−'; menos.setAttribute('aria-label', 'Diminuir quantidade de ' + item.nome); menos.disabled = item.quantidade <= 1;
     var valor = document.createElement('output'); valor.textContent = item.quantidade; valor.setAttribute('aria-label', 'Quantidade de ' + item.nome);
@@ -28,6 +32,10 @@ function desenharCarrinho() {
     menos.onclick = function () { alterarQuantidade(indice, -1); };
     mais.onclick = function () { alterarQuantidade(indice, 1); };
     controle.append(menos, valor, mais); linha.appendChild(controle);
+    var valorItem = document.createElement('strong'); valorItem.className = 'valor-item';
+    valorItem.textContent = preco === null ? '—' : formatarPreco(preco * item.quantidade);
+    valorItem.setAttribute('aria-label', 'Total de ' + item.nome + ': ' + valorItem.textContent);
+    linha.appendChild(valorItem);
     var excluir = document.createElement('button'); excluir.type = 'button'; excluir.className = 'excluir'; excluir.setAttribute('aria-label', 'Excluir ' + item.nome);
     excluir.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7M14 10v7"/></svg>';
     excluir.onclick = function () {
@@ -41,6 +49,9 @@ function desenharCarrinho() {
   lista.hidden = itensCarrinho.length === 0;
   document.getElementById('carrinho-vazio').hidden = itensCarrinho.length > 0;
   document.getElementById('subtotal').textContent = 'Subtotal (' + total + (total === 1 ? ' item)' : ' itens)');
+  var subtotal = calcularSubtotal(itensCarrinho);
+  document.getElementById('valor-subtotal').textContent = subtotal === null ? '—' : formatarPreco(subtotal);
+  document.getElementById('valor-total').textContent = subtotal === null ? '—' : formatarPreco(subtotal);
   document.getElementById('finalizar').disabled = total === 0;
   atualizarContadorCarrinho();
 }
