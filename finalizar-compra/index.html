@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Compra | NovaTech</title>
+  <link rel="stylesheet" href="../assets/fontes.css">
+  <link rel="stylesheet" href="../home/style.css?v=pastas-1">
+  <link rel="stylesheet" href="style.css?v=checkout-1">
+  <link rel="stylesheet" href="../compartilhado/footer.css?v=pastas-1">
+  <script src="../compartilhado/carrinho-dados.js?v=pastas-1" defer></script>
+  <script src="script.js?v=checkout-1" defer></script>
+</head>
+<body id="topo">
+<div class="pagina">
+  <header class="cabecalho" id="inicio">
+    <a href="../home/index.html?v=pastas-1" class="logo"><img src="../assets/home/logo-novatech.png" alt="NovaTech"></a>
+    <nav aria-label="Menu principal">
+      <a class="link-loja" href="../home/index.html?v=pastas-1#inicio">LOJA</a>
+      <a href="../home/index.html?v=pastas-1#categorias">CATEGORIAS</a>
+      <a href="../home/index.html?v=pastas-1#ofertas">OFERTAS</a>
+      <a href="../home/index.html?v=pastas-1#novidades">NOVIDADES</a>
+      <a href="#sobre-novatech">SOBRE</a>
+    </nav>
+    <form class="busca" action="../home/index.html" role="search">
+      <input type="hidden" name="v" value="pastas-1">
+      <button type="submit" aria-label="Buscar produtos"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"></circle><path d="m15 15 6 6"></path></svg></button>
+      <input type="search" id="buscar" name="busca" aria-label="Buscar produtos">
+    </form>
+    <div class="atalhos">
+      <button class="icone" id="favoritos" aria-label="Favoritos" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 3 12C-3 5 6-2 12 5c6-7 15 0 9 7Z"></path></svg></button>
+      <button class="icone carrinho" id="carrinho" aria-label="Carrinho" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 2h4l3 13h12l3-9H6"></path><circle cx="9" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle></svg><span id="quantidade">0</span></button>
+      <a class="icone" href="../login/index.html?v=pastas-1" aria-label="Entrar na minha conta"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4"></circle><path d="M4 22v-4c0-6 16-6 16 0v4"></path></svg></a>
+    </div>
+  </header>
+  <main class="pagina-checkout">
+    <div class="coluna-checkout">
+      <h1>FINALIZAR COMPRA</h1>
+      <p class="introducao-checkout">Revise suas informações e escolha a forma de entrega e pagamento.</p>
+      <div class="checkout-vazio" id="checkout-vazio" hidden>
+        <svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="3"/><path d="M1 9h22M5 15h5"/></svg>
+        <h2>Seu carrinho está vazio</h2>
+        <p>Escolha um clássico da loja para começar seu pedido.</p>
+        <a class="botao-principal" href="../home/index.html?v=pastas-1">Explorar a loja <svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+      </div>
+      <div id="etapas-checkout">
+        <section class="bloco-checkout" id="bloco-endereco" aria-labelledby="titulo-endereco">
+          <div class="titulo-bloco">
+            <h2 id="titulo-endereco"><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-8 7-14a7 7 0 0 0-14 0c0 6 7 14 7 14Z"/><circle cx="12" cy="8" r="2"/></svg> Endereço de entrega</h2>
+            <a class="botao-contorno atalho-resumo" href="#resumo-pedido"><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg> Resumo do pedido</a>
+          </div>
+          <div class="endereco-escolhido">
+            <span class="marcador-endereco" aria-hidden="true"></span>
+            <div class="dados-endereco" id="dados-endereco"><h3>Nenhum endereço cadastrado</h3><p>Adicione um endereço para receber seu pedido.</p></div>
+            <span class="etiqueta-endereco" id="etiqueta-endereco" hidden>Endereço padrão</span>
+            <div class="acoes-endereco">
+              <button type="button" class="botao-texto" id="editar-endereco"><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 4 6 6M4 20l2-7L17 2l5 5-11 11ZM11 4H3v18h18v-8"/></svg> <span>Adicionar</span></button>
+              <button type="button" class="botao-texto" id="excluir-endereco" hidden><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7M14 10v7"/></svg> Excluir</button>
+            </div>
+          </div>
+        </section>
+        <section class="bloco-checkout" aria-labelledby="titulo-entrega">
+          <div class="titulo-bloco titulo-com-descricao"><h2 id="titulo-entrega"><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 4h13v13H1zM14 9h5l4 5v3h-9"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg> Entrega</h2><p>Escolha uma forma de entrega para o seu pedido.</p></div>
+          <fieldset class="opcoes-entrega">
+            <legend class="leitor">Forma de entrega</legend>
+            <label class="opcao-entrega">
+              <input type="radio" name="entrega" value="padrao" checked>
+              <svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 4h13v13H1zM14 9h5l4 5v3h-9"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg>
+              <span class="nome-entrega"><strong>Entrega Padrão</strong><small>Correios · PAC</small></span>
+              <strong class="preco-entrega">R$ 19,90</strong>
+              <span class="prazo-entrega"><small>Estimativa de entrega</small><strong>5 a 8 dias úteis</strong></span>
+            </label>
+            <label class="opcao-entrega">
+              <input type="radio" name="entrega" value="expressa">
+              <svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 4h13v13H1zM14 9h5l4 5v3h-9"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg>
+              <span class="nome-entrega"><strong>Entrega Expressa</strong><small>Correios · SEDEX</small></span>
+              <strong class="preco-entrega">R$ 29,90</strong>
+              <span class="prazo-entrega"><small>Estimativa de entrega</small><strong>2 a 4 dias úteis</strong></span>
+            </label>
+            <label class="opcao-entrega">
+              <input type="radio" name="entrega" value="retirada">
+              <svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v11h18V10M2 3h20l1 7H1zM9 21v-7h6v7"/><path d="M1 10c0 4 5 4 5 0 0 4 6 4 6 0 0 4 6 4 6 0 0 4 5 4 5 0"/></svg>
+              <span class="nome-entrega"><strong>Retirar na loja</strong><small>Retirada a combinar</small></span>
+              <strong class="preco-entrega">Grátis</strong>
+              <span class="prazo-entrega"><small>Disponibilidade</small><strong>Após confirmação</strong></span>
+            </label>
+          </fieldset>
+          <p class="nota-entrega">Valores e prazos de frete para demonstração.</p>
+        </section>
+        <section class="bloco-checkout" aria-labelledby="titulo-pagamento">
+          <div class="titulo-bloco cabecalho-pagamento">
+            <div><h2 id="titulo-pagamento"><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="3"/><path d="M1 9h22M5 15h5"/></svg> Forma de Pagamento</h2><p>Escolha a forma de pagamento.</p></div>
+            <fieldset class="abas-pagamento">
+              <legend class="leitor">Forma de pagamento</legend>
+              <label><input class="leitor" type="radio" name="pagamento" value="cartao" checked><span><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="3"/><path d="M1 9h22M5 15h5"/></svg> Cartão de crédito</span></label>
+              <label><input class="leitor" type="radio" name="pagamento" value="pix"><span><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 4 4-4 4-4-4Zm0 12 4 4-4 4-4-4ZM2 12l4-4 4 4-4 4Zm12 0 4-4 4 4-4 4Z"/></svg> Pix</span></label>
+              <label><input class="leitor" type="radio" name="pagamento" value="boleto"><span><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4v16M5 4v16M9 4v16M11 4v16M15 4v16M18 4v16M22 4v16"/></svg> Boleto bancário</span></label>
+            </fieldset>
+          </div>
+          <div id="painel-cartao">
+            <div class="cartao-escolhido">
+              <span class="marcador-endereco" aria-hidden="true"></span>
+              <span class="bandeira-cartao" aria-hidden="true"><i></i><i></i></span>
+              <div class="dados-cartao" id="dados-cartao"><strong>Nenhum cartão adicionado</strong><span>Adicione um cartão de teste para continuar.</span></div>
+              <button type="button" class="botao-texto" id="editar-cartao" hidden><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 4 6 6M4 20l2-7L17 2l5 5-11 11ZM11 4H3v18h18v-8"/></svg> Editar</button>
+            </div>
+            <button type="button" class="botao-contorno adicionar-cartao" id="adicionar-cartao"><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg> <span>Cadastrar novo cartão</span></button>
+          </div>
+          <div class="pagamento-alternativo" id="painel-pix" hidden><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 4 4-4 4-4-4Zm0 12 4 4-4 4-4-4ZM2 12l4-4 4 4-4 4Zm12 0 4-4 4 4-4 4Z"/></svg><div><h3>Pagar com Pix</h3><p>Pagamento à vista pelo aplicativo do seu banco.</p></div></div>
+          <div class="pagamento-alternativo" id="painel-boleto" hidden><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4v16M5 4v16M9 4v16M11 4v16M15 4v16M18 4v16M22 4v16"/></svg><div><h3>Pagar com boleto bancário</h3><p>Use o código de barras no banco ou aplicativo.</p></div></div>
+          <p class="nota-pagamento">Pagamento demonstrativo. Nenhuma cobrança será realizada.</p>
+        </section>
+      </div>
+      <a class="voltar-carrinho" href="../carrinho/index.html?v=checkout-1">← Voltar ao carrinho</a>
+      <p class="aviso-checkout" id="aviso-checkout" role="status" aria-live="polite"></p>
+    </div>
+    <aside class="resumo-checkout" id="resumo-pedido" aria-labelledby="titulo-resumo" tabindex="-1">
+      <img class="arte-checkout" src="arte-resumo.svg" alt="" width="540" height="170">
+      <div class="conteudo-resumo">
+        <h2 id="titulo-resumo">Resumo do pedido</h2>
+        <div class="produtos-resumo" id="produtos-resumo"></div>
+        <div class="valores-resumo" aria-live="polite" aria-atomic="true">
+          <p><span id="rotulo-subtotal">Subtotal</span><strong id="valor-subtotal">—</strong></p>
+          <p><span id="rotulo-frete">Frete (Entrega Padrão)</span><strong id="valor-frete">—</strong></p>
+          <p class="total-checkout"><strong>Total do pedido</strong><strong id="valor-total">—</strong></p>
+        </div>
+        <button class="botao-principal finalizar-checkout" id="finalizar-pedido" type="button"><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></svg> <span>Finalizar compra</span> <svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+        <div class="selos-checkout" aria-label="Informações da compra">
+          <p><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 9 4v6c0 6-9 10-9 10S3 18 3 12V6Z"/><path d="m7 12 3 3 7-7"/></svg><span><strong>Compra segura</strong><small>Seus dados protegidos</small></span></p>
+          <p><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 4h13v13H1zM14 9h5l4 5v3h-9"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg><span><strong>Entrega para</strong><small>todo o Brasil</small></span></p>
+          <p><svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="3"/><path d="M1 9h22M5 15h5"/></svg><span><strong>Diversas formas</strong><small>de pagamento</small></span></p>
+        </div>
+      </div>
+    </aside>
+  </main>
+  <footer class="rodape-site" aria-label="Rodapé da NovaTech">
+    <div class="rodape-principal">
+      <div class="rodape-marca" id="sobre-novatech">
+        <a href="../home/index.html?v=pastas-1" aria-label="NovaTech — ir para a loja"><img src="../assets/home/logo-novatech.png" alt="NovaTech" width="148" height="70" loading="lazy"></a>
+        <p>Tecnologia vintage,<br>história em cada detalhe.</p>
+        <span class="rodape-assinatura">Uma nova vida para os clássicos.</span>
+      </div>
+      <section class="rodape-coluna" aria-labelledby="rodape-loja">
+        <h2 id="rodape-loja">EXPLORE A LOJA</h2>
+        <ul>
+          <li><a href="../home/index.html?v=pastas-1">Todos os produtos</a></li>
+          <li><a href="../home/index.html?v=pastas-1#ofertas">Ofertas</a></li>
+          <li><a href="../home/index.html?v=pastas-1#mais-vendidos">Mais vendidos</a></li>
+          <li><a href="../home/index.html?v=pastas-1#novidades">Novidades</a></li>
+        </ul>
+      </section>
+      <section class="rodape-coluna" aria-labelledby="rodape-conta">
+        <h2 id="rodape-conta">MINHA CONTA</h2>
+        <ul>
+          <li><a href="../login/index.html?v=pastas-1">Entrar</a></li>
+          <li><a href="../criar-conta/index.html?v=pastas-1">Criar conta</a></li>
+          <li><a href="../carrinho/index.html?v=checkout-1">Meu carrinho</a></li>
+        </ul>
+      </section>
+      <section class="rodape-coluna rodape-classicos" aria-labelledby="rodape-classicos">
+        <h2 id="rodape-classicos">CLÁSSICOS DE VERDADE</h2>
+        <p>Videogames, televisores, câmeras e áudio.<br>Encontre a próxima peça da sua coleção.</p>
+        <a class="rodape-explorar" href="../home/index.html?v=pastas-1#ofertas">Explorar produtos <span aria-hidden="true">→</span></a>
+      </section>
+    </div>
+    <div class="rodape-base">
+      <p>© 2026 NovaTech</p>
+      <p>Site demonstrativo. Compras não são processadas.</p>
+      <a href="#topo">Voltar ao topo <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+</div>
+<dialog class="modal-checkout" id="modal-endereco" aria-labelledby="titulo-modal-endereco">
+  <div class="cabecalho-modal"><h2 id="titulo-modal-endereco">Endereço de entrega</h2><button class="fechar-modal" type="button" data-fechar aria-label="Fechar endereço">×</button></div>
+  <form id="form-endereco" method="dialog">
+    <div class="campos-endereco">
+      <label class="campo-largo">Nome do destinatário<input name="destinatario" placeholder="Nome completo" autocomplete="shipping name" maxlength="80" required></label>
+      <label>CEP<input name="cep" placeholder="00000-000" inputmode="numeric" autocomplete="shipping postal-code" pattern="[0-9]{5}-?[0-9]{3}" maxlength="9" title="Digite um CEP com 8 números." required></label>
+      <label>Identificação<input name="apelido" placeholder="Casa, trabalho..." maxlength="30"></label>
+      <label class="campo-largo">Rua ou avenida<input name="rua" placeholder="Endereço" autocomplete="shipping address-line1" maxlength="100" required></label>
+      <label>Número<input name="numero" placeholder="Número ou S/N" maxlength="12" required></label>
+      <label>Complemento <span>(opcional)</span><input name="complemento" placeholder="Apartamento, bloco..." autocomplete="shipping address-line2" maxlength="60"></label>
+      <label>Bairro<input name="bairro" placeholder="Bairro" maxlength="60" required></label>
+      <label>Cidade<input name="cidade" placeholder="Cidade" autocomplete="shipping address-level2" maxlength="60" required></label>
+      <label>Estado<select name="uf" autocomplete="shipping address-level1" required><option value="">Selecione</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></label>
+    </div>
+    <div class="acoes-modal"><button class="botao-contorno" type="button" data-fechar>Cancelar</button><button class="botao-principal" type="submit">Salvar endereço</button></div>
+  </form>
+</dialog>
+<dialog class="modal-checkout" id="modal-cartao" aria-labelledby="titulo-modal-cartao">
+  <div class="cabecalho-modal"><h2 id="titulo-modal-cartao">Cartão de teste</h2><button class="fechar-modal" type="button" data-fechar aria-label="Fechar cartão">×</button></div>
+  <p class="intro-modal">Use apenas os últimos quatro dígitos para testar a seleção do cartão.</p>
+  <form id="form-cartao" method="dialog">
+    <div class="campos-endereco">
+      <label class="campo-largo">Nome no cartão<input name="titular" placeholder="Nome no cartão de teste" maxlength="80" required></label>
+      <label>Últimos 4 dígitos<input name="final" placeholder="0000" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" title="Digite somente os quatro últimos dígitos." required></label>
+      <label>Validade<input name="validade" type="month" required></label>
+    </div>
+    <div class="acoes-modal"><button class="botao-contorno" type="button" data-fechar>Cancelar</button><button class="botao-principal" type="submit">Salvar cartão de teste</button></div>
+  </form>
+</dialog>
+<dialog class="modal-checkout modal-confirmacao" id="modal-confirmacao" aria-labelledby="titulo-confirmacao">
+  <div class="cabecalho-modal"><h2 id="titulo-confirmacao">Simulação concluída</h2><button class="fechar-modal" type="button" data-fechar aria-label="Fechar confirmação">×</button></div>
+  <div class="icone-confirmacao" aria-hidden="true">✓</div>
+  <h3>Seu pedido de demonstração está pronto!</h3>
+  <p id="resumo-confirmacao"></p>
+  <p>Nenhuma compra foi realizada. Seus itens continuam no carrinho.</p>
+  <a class="botao-principal" href="../home/index.html?v=pastas-1">Continuar na loja <svg class="simbolo" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+</dialog>
+</body>
+</html>

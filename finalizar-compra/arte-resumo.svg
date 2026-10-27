@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 170" fill="none">
+  <defs>
+    <linearGradient id="papel" x1="0" y1="0" x2="540" y2="170" gradientUnits="userSpaceOnUse"><stop stop-color="#f4d2a0"/><stop offset="1" stop-color="#edc08a"/></linearGradient>
+    <filter id="textura"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".12"/></feComponentTransfer><feBlend in="SourceGraphic" mode="multiply"/></filter>
+  </defs>
+  <g filter="url(#textura)">
+    <path fill="url(#papel)" d="M0 0h540v170H0z"/>
+    <path d="m18-36 26 133c7 32 29 39 57 46l350 86" stroke="#462516" stroke-width="48"/>
+    <path d="m63-36 24 120c5 24 24 32 50 39l360 88" stroke="#a73515" stroke-width="45"/>
+    <path d="m107-36 20 106c5 23 20 31 49 38l365 88" stroke="#d64b13" stroke-width="43"/>
+    <path d="m147-36 19 94c5 22 19 30 47 37l366 88" stroke="#f08221" stroke-width="39"/>
+    <path d="m184-36 16 83c5 22 18 29 44 35l367 88" stroke="#f7ad42" stroke-width="36"/>
+    <path d="m449 18 4 47 24-28-14 38 42-11-34 27 42 14-46 1 22 36-35-26-5 48-9-45-27 27 14-38-41 9 35-24-43-18 47 2-22-39 35 31z" fill="#b5411a"/>
+  </g>
+</svg>

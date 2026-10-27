@@ -70,5 +70,5 @@ document.getElementById('favoritos').onclick = function () { avisar('Você ainda
 document.getElementById('form-cupom').onsubmit = function (evento) {
   evento.preventDefault(); avisar('Cupons estarão disponíveis em breve.');
 };
-document.getElementById('finalizar').onclick = function () { avisar('Esta é uma demonstração. A finalização da compra estará disponível em breve.'); };
+document.getElementById('finalizar').onclick = function () { window.location.href = '../finalizar-compra/index.html?v=checkout-1'; };
 desenharCarrinho();
