@@ -1,4 +1,4 @@
-// Tudo nesta página é uma demonstração. Nenhum dado é enviado ou salvo.
+// Demonstração. Somente o carrinho é salvo neste navegador.
 var aviso = document.getElementById('mensagem-home');
 var tempoAviso;
 function mostrarMensagem(texto) {
@@ -8,19 +8,26 @@ function mostrarMensagem(texto) {
   tempoAviso = setTimeout(function () { aviso.hidden = true; }, 4500);
 }
 
-// O número inicial acompanha o protótipo.
-var quantidade = 3;
+// Os botões usam os dados do cartão clicado.
 var botoesAdicionar = document.querySelectorAll('.adicionar');
 for (var i = 0; i < botoesAdicionar.length; i++) {
   botoesAdicionar[i].addEventListener('click', function () {
-    quantidade++;
-    document.getElementById('quantidade').textContent = quantidade;
-    document.getElementById('carrinho').setAttribute('aria-label', 'Carrinho, ' + quantidade + ' produtos');
-    mostrarMensagem(this.getAttribute('data-produto') + ' adicionado ao carrinho de demonstração.');
+    var cartao = this.closest('.produto');
+    var nome = cartao.querySelector('h3').textContent;
+    var itens = lerCarrinho();
+    var existente = itens.find(function (item) { return item.id === nome; });
+    if (existente) {
+      existente.quantidade = Math.min(99, existente.quantidade + 1);
+    } else {
+      itens.push({ id: nome, nome: nome, categoria: cartao.getAttribute('data-categoria'),
+        imagem: cartao.querySelector('.foto-produto img').getAttribute('src'), quantidade: 1 });
+    }
+    if (salvarCarrinho(itens)) window.location.href = 'carrinho.html';
+    else mostrarMensagem('Não foi possível salvar o carrinho neste navegador.');
   });
 }
 document.getElementById('carrinho').addEventListener('click', function () {
-  mostrarMensagem('Seu carrinho de demonstração tem ' + quantidade + ' produtos.');
+  window.location.href = 'carrinho.html';
 });
 document.getElementById('favoritos').addEventListener('click', function () {
   mostrarMensagem('Você ainda não tem favoritos nesta demonstração.');
